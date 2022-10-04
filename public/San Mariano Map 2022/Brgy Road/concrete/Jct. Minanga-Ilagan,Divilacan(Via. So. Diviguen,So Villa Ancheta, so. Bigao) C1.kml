@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Jct. Minanga-Ilagan,Divilacan(Via. So. Diviguen,So Villa Ancheta, so. Bigao) C1.kml</name>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>Jct. Minanga-Ilagan,Divilacan(Via. So. Diviguen,So Villa Ancheta, so. Bigao) C1</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0173174949968,16.99385721566762,0 122.0174269640869,16.99411587768239,0 122.0174743216581,16.9942253439478,0 122.0175281930938,16.99441118897586,0 122.0176025275965,16.99458494860512,0 122.0177024777783,16.99478643847339,0 122.0178130993237,16.99494290076829,0 122.0179100653571,16.99508227896904,0 122.0179778834664,16.99520041955228,0 122.0180345260093,16.9953448209546,0 122.0181077177665,16.99557750289047,0 122.0181563944165,16.99574952883069,0 122.0181865282967,16.99583426367585,0 122.0182470124801,16.99594509082477,0 122.0182858250654,16.99600094337085,0 122.0183647976616,16.99605221750019,0 122.0185207853437,16.99614909159494,0 122.018667717435,16.9962748259891,0 122.0188125176186,16.9964073187539,0 122.0189344900054,16.99652042441518,0 122.0190103938089,16.99656343139167,0 122.0190906369956,16.9965797308487,0 122.0192114195971,16.99656446692016,0 122.0193424617302,16.9965203096956,0 122.0195968301996,16.99644410847159,0 122.0198064968878,16.99642769487424,0 122.0200760226057,16.99640121793423,0 122.0203143367893,16.99639929924195,0 122.0205762529141,16.99640080250868,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

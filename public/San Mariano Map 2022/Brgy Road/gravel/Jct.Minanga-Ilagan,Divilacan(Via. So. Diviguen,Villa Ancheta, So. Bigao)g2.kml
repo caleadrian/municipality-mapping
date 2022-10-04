@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Jct.Minanga-Ilagan,Divilacan(Via. So. Diviguen,Villa Ancheta, So. Bigao)g2.kml</name>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>Jct.Minanga-Ilagan,Divilacan(Via. So. Diviguen,Villa Ancheta, So. Bigao)g2</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0389536125098,17.01178450890797,0 122.0390323288311,17.01183404190083,0 122.0390975102675,17.01189681983217,0 122.0391682907525,17.01199144025544,0 122.0392173664458,17.01211314512594,0 122.0392592694456,17.01222827714322,0 122.0393098179263,17.01230771858025,0 122.0393649908095,17.01237043545319,0 122.0395306636953,17.01250216812823,0 122.0395737456622,17.01259867317415,0 122.0396487927823,17.01272591868936,0 122.0397729230431,17.0128509675213,0 122.0398927915682,17.01293417572995,0 122.0400086337475,17.01298215190936,0 122.0401556138307,17.01303938724171,0 122.0402010566378,17.01309485028591,0 122.0402306487986,17.01319060438518,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Disulap Proper-So. Bangko Road Section g1.kml</name>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Disulap Proper-So. Bangko Road Section g1</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0743787585879,16.96803184685805,0 122.0745179179403,16.96819995154778,0 122.0746515273349,16.96835275451904,0 122.0746655104243,16.9683960932782,0 122.0746543836283,16.9684332387326,0 122.0746026018506,16.96848774963892,0 122.0745110731741,16.96854055481135,0 122.0744194283117,16.96856839344751,0 122.0742955704184,16.96859345640821,0 122.0741789922299,16.9686148919275,0 122.074054138479,16.96862629991057,0 122.0739450011443,16.96862589137716,0 122.0738541360639,16.9685857185969,0 122.0737687041503,16.96851665627198,0 122.0736741995179,16.96842939265409,0 122.0736060316637,16.96833162500556,0 122.0735450786594,16.96827669470262,0 122.0734920232529,16.96827292084071,0 122.0734349364531,16.9682898535124,0 122.0733648619277,16.96833649420859,0 122.0733286690702,16.96839863553341,0 122.0732542852507,16.96851217809538,0 122.0731636570292,16.96862988803576,0 122.0730913354794,16.96869495336478,0 122.0730009339228,16.96878343301145,0 122.0728780401948,16.96886915324684,0 122.0727871906103,16.96893674783451,0 122.0727443342127,16.96901202837024,0 122.0727188051748,16.96907262498611,0 122.0727122510425,16.96912115187786,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

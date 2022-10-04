@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>So. Caunayan.kml</name>
+	<Style id="sh_placemark_circle_highlight_copy73">
+		<IconStyle>
+			<color>ffefd9ff</color>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle_highlight.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ffefd9ff</color>
+			<scale>1.2</scale>
+		</LabelStyle>
+	</Style>
+	<StyleMap id="msn_placemark_circle_copy74">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_placemark_circle_copy520</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_placemark_circle_highlight_copy73</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_placemark_circle_copy520">
+		<IconStyle>
+			<color>ffefd9ff</color>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ffefd9ff</color>
+			<scale>1.2</scale>
+		</LabelStyle>
+	</Style>
+	<Placemark>
+		<name>Caunayan</name>
+		<LookAt>
+			<longitude>122.0258244881143</longitude>
+			<latitude>17.02517215019557</latitude>
+			<altitude>0</altitude>
+			<heading>1.17103511412074</heading>
+			<tilt>17.73685198983412</tilt>
+			<range>586.0199175919548</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<styleUrl>#msn_placemark_circle_copy74</styleUrl>
+		<Point>
+			<coordinates>122.0237732497876,17.02601641070937,0</coordinates>
+		</Point>
+	</Placemark>
+</Document>
+</kml>

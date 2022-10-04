@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Minanga Proper-Slaughter House c1.kml</name>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Minanga Proper-Slaughter House c1</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.02798474356,16.99255127300673,0 122.028141731574,16.9926481922214,0 122.0282924635292,16.99276937791805,0 122.0284044751377,16.99288969398446,0 122.0285067763865,16.99302178875713,0 122.028606956797,16.99315059168579,0 122.0286886520461,16.99323109904206,0 122.0287656818824,16.99326898289577,0 122.028942931678,16.99328522916139,0 122.0291481101371,16.99328395876236,0 122.0292953336427,16.99329815831221,0 122.0294458079892,16.99332214955467,0 122.0295293039985,16.99335735308467,0 122.0295809674043,16.99341056663472,0 122.0296658824191,16.9935188431484,0 122.0297755690029,16.99370569347305,0 122.029890255559,16.99391207008208,0 122.0300118888694,16.99417582540091,0 122.0300691767033,16.99432021231557,0 122.0301060816668,16.99445223982459,0 122.0301372624164,16.99454010371447,0 122.0301837524826,16.99460651169444,0 122.0302825071261,16.99463301787396,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Steel bridge San Jose-Casala c8.kml</name>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Steel bridge San Jose-Casala c8</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.1346306293052,16.9124190599751,0 122.1344946377408,16.91230661059245,0 122.1343987412156,16.91223288006951,0 122.134318420974,16.91217275437074,0 122.1342880390156,16.91214583783858,0 122.1342456065522,16.91210185003088,0 122.1342014628339,16.91203120005383,0 122.134170179063,16.91196165757074,0 122.1341541941534,16.91191610649742,0 122.1341450625601,16.9118735905788,0 122.1341445342433,16.91184640102774,0 122.1341559260419,16.91179782519172,0 122.1341838499493,16.91174815305656,0 122.1342258037663,16.91168655539253,0 122.1342466034794,16.91163029043155,0 122.1342657878511,16.91156652391104,0 122.1342775261636,16.91150070778472,0 122.1342874648253,16.91141876178155,0 122.1342970474612,16.91134604289103,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

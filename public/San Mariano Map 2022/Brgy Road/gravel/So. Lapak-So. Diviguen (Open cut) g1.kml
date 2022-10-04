@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>So. Lapak-So. Diviguen (Open cut) g1.kml</name>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>So. Lapak-So. Diviguen (Open cut) g1</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0225232861345,17.0052475563189,0 122.0226104998516,17.00511330175976,0 122.0226993959772,17.00500932527557,0 122.0228010558382,17.00492241928229,0 122.0229225737573,17.00483405555714,0 122.023113886562,17.0047515642266,0 122.0232263071712,17.00468219384606,0 122.0233248370724,17.00458203188319,0 122.0234003662555,17.00447529289875,0 122.023476229137,17.00439290428118,0 122.0235610747509,17.00431916677325,0 122.0237480057067,17.00422052475886,0 122.0238940752553,17.00415750544931,0 122.0241112756365,17.00402821744625,0 122.024324090899,17.00390020360967,0 122.0245746300374,17.00375460780612,0 122.024788869594,17.0036225946531,0 122.025000566161,17.00353873464991,0 122.0251945200683,17.00348375140841,0 122.0253488433721,17.00343794201378,0 122.0254644219387,17.00338455891059,0 122.0255636119,17.00331240383316,0 122.0256912482732,17.00318081371168,0 122.0258515340475,17.00301905511711,0 122.0260020191089,17.00286809433215,0 122.0261110757823,17.00277899916371,0 122.0261887509515,17.00269073705788,0 122.0262546851731,17.00254930266649,0 122.0263223751246,17.00239204570013,0 122.0263992940527,17.00221239515895,0 122.0264562014317,17.00208829914789,0 122.0265030648198,17.00202969233182,0 122.0265845081411,17.00197438152042,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

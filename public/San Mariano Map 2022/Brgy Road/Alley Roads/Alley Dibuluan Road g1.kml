@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Alley Dibuluan Road g1.kml</name>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>Alley Dibuluan Road g1</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.1089304262291,16.99796849860266,0 122.1088217536303,16.99787784059621,0 122.1085509941242,16.99773567081451,0 122.1082311798969,16.99763426661364,0 122.1077746714497,16.99749075805284,0 122.1073990887325,16.99738914348074,0 122.1071752285585,16.99732162395817,0 122.1069950096317,16.99726747663106,0 122.1068880077021,16.99724296405884,0 122.1068160575321,16.99725931277919,0 122.1067200785888,16.99732171431321,0 122.1066723518664,16.99737435718017,0 122.1066242660005,16.9974139653191,0 122.1065371209453,16.9974474648888,0 122.1063672260055,16.99747543860708,0 122.1061921702396,16.997500400742,0 122.106030140985,16.99754892253886,0 122.1059334025549,16.99760026945786,0 122.1058295147627,16.99767205062905,0 122.1056959729473,16.99771988199509,0 122.1055688136776,16.99775655112383,0 122.1054074117663,16.99777113223752,0 122.1053087520232,16.9977606775992,0 122.1051927564065,16.99772386858215,0 122.1050473647606,16.99765959363873,0 122.1049457897177,16.99760670861999,0 122.1047751754576,16.99753666251678,0 122.1046176410888,16.9974320753459,0 122.1044794434722,16.99738674728415,0 122.1043309842889,16.99734440802582,0 122.1041930771436,16.99729364825644,0 122.1041117475876,16.99723245349254,0 122.1040384039975,16.99715133850567,0 122.1039530583966,16.99700745012354,0 122.1038746761792,16.99688959179131,0 122.1038098181793,16.99683181859766,0 122.1037076178009,16.996803984358,0 122.103592990531,16.99683526463331,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

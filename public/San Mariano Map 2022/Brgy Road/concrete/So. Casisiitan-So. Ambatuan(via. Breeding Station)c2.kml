@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>So. Casisiitan-So. Ambatuan(via. Breeding Station)c2.kml</name>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>So. Casisiitan-So. Ambatuan(via. Breeding Station)c2</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0294906249712,16.98156701454676,0 122.0296398235517,16.9816539521032,0 122.0300249843712,16.98195820297456,0 122.0304073091464,16.9822693235791,0 122.0306556418155,16.98248857759935,0 122.0310774991891,16.98283504502066,0 122.0315766625013,16.98323544566147,0 122.0324045766636,16.9838982104903,0 122.0334971922025,16.98480040726021,0 122.0342913294036,16.9854602272655,0 122.035164631469,16.98615278651451,0 122.0353222969622,16.98624590685727,0 122.036109638668,16.98652918862904,0 122.03695941062,16.98683207972153,0 122.0375795121866,16.98702205595986,0 122.0377553209534,16.98708114657889,0 122.0378666893919,16.98715235041658,0 122.0379723831467,16.98727992627672,0 122.0382017007213,16.98759719369483,0 122.0383684662047,16.9878007723422,0 122.0385977289059,16.9880144301773,0 122.038805510413,16.98821245666717,0 122.0389220309966,16.9883224170305,0 122.0390137429952,16.98839206936172,0 122.039113411406,16.9884064036762,0 122.0392448433539,16.98839715580087,0 122.0393456757252,16.98837624918436,0 122.0394727948395,16.98832178930375,0 122.0395598986259,16.98823950270885,0 122.039666379464,16.98815534829336,0 122.0397514842025,16.98810760798077,0 122.039805543312,16.98808588767064,0 122.0398462222621,16.98807286342738,0 122.0399140527369,16.98807996993015,0 122.0399727061669,16.98811368228317,0 122.0400604704442,16.98818308914937,0 122.0401570833166,16.98826356165537,0 122.0402378911829,16.98833436774354,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

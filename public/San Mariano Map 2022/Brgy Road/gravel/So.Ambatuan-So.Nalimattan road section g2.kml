@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>So.Ambatuan-So.Nalimattan road section g2.kml</name>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>So.Ambatuan-So.Nalimattan road section g2</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0433206657129,16.98831369465911,0 122.043414655155,16.98835045829807,0 122.0434774704935,16.9883815991691,0 122.0435206463188,16.98841727045363,0 122.0435539267194,16.98845945039933,0 122.0435752995383,16.98851801947676,0 122.0435831041116,16.98857645658184,0 122.0435701352423,16.98864595320427,0 122.0434717826785,16.9889133553626,0 122.0433347238735,16.98926877186059,0 122.043284146782,16.9894653731888,0 122.0432391712296,16.98963860785758,0 122.0431881454901,16.98976810966096,0 122.0431560362741,16.98989979416376,0 122.0431532648506,16.99001958161472,0 122.0431860296257,16.99015150475174,0 122.0432782154547,16.99029131433348,0 122.0434971969167,16.9905375232911,0 122.0436239165655,16.99067272010889,0 122.0437128441881,16.99072596550561,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

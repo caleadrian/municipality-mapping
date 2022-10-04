@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Jct.BItabain-Bitabian High School g1.kml</name>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>Jct.BItabain-Bitabian High School g1</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0101968557235,16.93914834261814,0 122.010023747813,16.93910414885567,0 122.0098618686741,16.93905949049667,0 122.0096245900378,16.93897328646352,0 122.0094395954605,16.93891214875122,0 122.0093178893657,16.93888534129795,0 122.0091823280085,16.93889017479475,0 122.0090493783399,16.93890889819111,0 122.0089468974071,16.93895047503604,0 122.0088617061235,16.93898385261762,0 122.0087590398157,16.93900335395516,0 122.0086217670539,16.93900051798312,0 122.0084705491164,16.93898094065565,0 122.008331189303,16.93897235345926,0 122.0082710165639,16.93896516414425,0 122.0082108786097,16.93894842244117,0 122.0081258629743,16.93889592218687,0 122.0080085854157,16.93881965237276,0 122.0079046266797,16.93876322221453,0 122.0077889524096,16.93870008551552,0 122.0075994891659,16.93863007404585,0 122.0073126667774,16.93853276637115,0 122.0071837278005,16.93850435806646,0 122.0069834825906,16.9384944979721,0 122.0067783967345,16.93848186726911,0 122.0066100848166,16.93848507254737,0 122.0065069493942,16.93849588341567,0 122.0063697632801,16.93852858018836,0 122.0062019558259,16.93857641276212,0 122.0060355038011,16.93860408409043,0 122.0057764342936,16.93862211909774,0 122.0056470400284,16.93862186658521,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

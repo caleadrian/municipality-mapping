@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>San Jose- So. Diwagden Road section 2.kml</name>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>San Jose- So. Diwagden Road section 2</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.1249415817398,16.9322198829839,0 122.1249894602437,16.93241484692308,0 122.1250736896816,16.93269843922848,0 122.1252133191915,16.93290989913806,0 122.1253499817736,16.93316166005964,0 122.1254435748633,16.93336158575769,0 122.1256102311424,16.93355585239533,0 122.1258314816679,16.93381564731699,0 122.1260249918606,16.93409834504645,0 122.126184311656,16.93440627183533,0 122.1262693637781,16.93447767618964,0 122.1264418478638,16.93452555933086,0 122.1267767469456,16.93457386630239,0 122.126946970249,16.93457750232858,0 122.1271023090665,16.93454793838919,0 122.1272919150523,16.934433895061,0 122.1274858671653,16.93425833541393,0 122.1275945838526,16.93410303197331,0 122.1276643854755,16.93400907718306,0 122.1277624872756,16.93394513933692,0 122.1279359276639,16.93386202961587,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Jct.Disulap-So. San Isidro(Via.So.Dalayap,So. Lucban)g6.kml</name>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Jct.Disulap-So. San Isidro(Via.So.Dalayap,So. Lucban)g6</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.1366257463592,16.96973028402977,0 122.1366779140927,16.96969960204412,0 122.1367149418061,16.96966783684663,0 122.1369079677574,16.96946488019209,0 122.1371422412014,16.96924203066841,0 122.1374008475982,16.96901730147166,0 122.1375603375153,16.96889583324363,0 122.1376151012166,16.96884645525534,0 122.1376408424545,16.96880972814509,0 122.1376637454478,16.96877164413901,0 122.1376792609015,16.96871237562729,0 122.1376855232856,16.96864123828975,0 122.1376849940049,16.9685003162673,0 122.1376761577438,16.96837209692016,0 122.1376668248055,16.96825863729234,0 122.1376717108346,16.96814426287644,0 122.1376902108565,16.9680497201179,0 122.1377123640515,16.96796034994047,0 122.1377675635633,16.96774487906376,0 122.1378008317671,16.96764283301506,0 122.1378144506156,16.96760074362077,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

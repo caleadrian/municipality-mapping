@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>So. Dipagsangjan.kml</name>
+	<StyleMap id="msn_placemark_circle_copy74">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_placemark_circle_copy520</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_placemark_circle_highlight_copy73</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_placemark_circle_copy520">
+		<IconStyle>
+			<color>ffefd9ff</color>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ffefd9ff</color>
+			<scale>1.2</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_placemark_circle_highlight_copy73">
+		<IconStyle>
+			<color>ffefd9ff</color>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle_highlight.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ffefd9ff</color>
+			<scale>1.2</scale>
+		</LabelStyle>
+	</Style>
+	<Placemark>
+		<name>Dipagsangjan</name>
+		<LookAt>
+			<longitude>122.3270165244139</longitude>
+			<latitude>16.80679736265954</latitude>
+			<altitude>0</altitude>
+			<heading>0.03885154072429375</heading>
+			<tilt>1.296504581516166e-011</tilt>
+			<range>24503.17253324094</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#msn_placemark_circle_copy74</styleUrl>
+		<Point>
+			<coordinates>122.3706581647368,16.89561442389996,0</coordinates>
+		</Point>
+	</Placemark>
+</Document>
+</kml>

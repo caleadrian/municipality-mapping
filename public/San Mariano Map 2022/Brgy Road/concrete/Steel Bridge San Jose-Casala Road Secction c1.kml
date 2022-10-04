@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Steel Bridge San Jose-Casala Road Secction c1.kml</name>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Steel Bridge San Jose-Casala Road Secction c1</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.1338361535246,16.9208973191185,0 122.134169463466,16.92048474775083,0 122.1343498207751,16.9202721967345,0 122.1344719156139,16.92009897860463,0 122.1345139161981,16.9200065000797,0 122.13451926548,16.91987641371804,0 122.1344977246517,16.9197697708563,0 122.1344836664282,16.91963380034465,0 122.1344892453965,16.91951410820472,0 122.134523855685,16.91941037041767,0 122.1345715430007,16.9192949388239,0 122.1346455603696,16.91919391608484,0 122.1347491961935,16.91910886086318,0 122.1348560389847,16.91905196746539,0 122.1349211866058,16.91902655991627,0 122.1349999591454,16.91894783721279,0 122.1350322475704,16.91887930725109,0 122.1350385202117,16.9187963186472,0 122.1350331390476,16.91871246594328,0 122.135006492088,16.9186173486159,0 122.1349709363353,16.91851288977563,0 122.1349485857408,16.91844400108988,0 122.1349345506062,16.91837119494178,0 122.1349160185001,16.91820912095962,0 122.1349087869789,16.9179970069725,0 122.1349080148239,16.91780322275142,0 122.1349348284967,16.91756519962698,0 122.1349668709558,16.91732451602225,0 122.1349984084469,16.91712080825097,0 122.1350447288012,16.91687255070523,0 122.1350795429002,16.91672130425358,0 122.1350878502608,16.91663798434768,0 122.135078768261,16.91658019268421,0 122.1350509422434,16.91649228677865,0 122.1350129711522,16.91641279660745,0 122.1349477578636,16.91629478204594,0 122.1349178028956,16.9162071625814,0 122.1349048837183,16.9161309738533,0 122.1349105395026,16.91606804306046,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

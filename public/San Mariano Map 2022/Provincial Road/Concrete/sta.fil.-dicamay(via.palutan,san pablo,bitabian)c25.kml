@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>sta.fil.-dicamay(via.palutan,san pablo,bitabian)c25.kml</name>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>sta.fil.-dicamay(via.palutan,san pablo,bitabian)c25</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0601193353279,16.81294098395172,0 122.0601221545204,16.81281561684278,0 122.0601182268657,16.8126711431669,0 122.0601152776081,16.81247889504696,0 122.0601218682037,16.81228426229328,0 122.0601284915725,16.81195140393718,0 122.0601604553458,16.81157902622985,0 122.0601780692392,16.81132101048858,0 122.0601771203301,16.81122179350024,0 122.0601574114016,16.81108580327601,0 122.0601363898629,16.81097596070708,0 122.0600948677471,16.81078022357199,0 122.0600601378393,16.8106204871396,0 122.0600338036064,16.81045088957961,0 122.0600316693059,16.81032387438139,0 122.0600360205748,16.81013002233372,0 122.0600418621025,16.80997455646044,0 122.0600627662949,16.80984394908589,0 122.0600899488995,16.80967855738108,0 122.0601106722826,16.80958139935361,0 122.0601410209099,16.8095067564253,0 122.0602104133861,16.80941417214478,0 122.0603282711581,16.80929405981752,0 122.0604252929495,16.80921191320787,0 122.0604968074911,16.80914796231941,0 122.0605493740838,16.80908175425373,0 122.0605869363407,16.8090129614936,0 122.0605959289125,16.80892111671333,0 122.0606021949585,16.80878513931887,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

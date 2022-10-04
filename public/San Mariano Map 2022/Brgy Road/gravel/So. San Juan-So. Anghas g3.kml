@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>So. San Juan-So. Anghas g3.kml</name>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>So. San Juan-So. Anghas g3</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0962954211081,16.88623954869446,0 122.0962820979308,16.88631485771399,0 122.0962385912512,16.886389355365,0 122.0961820547192,16.88647598899021,0 122.0961345077025,16.88654902366264,0 122.0960929290542,16.88663317370977,0 122.0960703116451,16.88671087078662,0 122.0960435735912,16.88682718662781,0 122.0960308917094,16.88695537723846,0 122.0960319813038,16.88711450071202,0 122.0960612410595,16.88726164202424,0 122.0960916669959,16.88734904249947,0 122.0961162102305,16.8873962623807,0 122.0961460092284,16.88744033236246,0 122.0961756759054,16.8874812495159,0 122.096222345578,16.88752197979049,0 122.0963078376919,16.8875800903588,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

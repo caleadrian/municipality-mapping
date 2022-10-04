@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Jct.Disulap-So. San Isidro(Via.So.Dalayap,So. Lucban)g8.kml</name>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Jct.Disulap-So. San Isidro(Via.So.Dalayap,So. Lucban)g8</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.1095273711956,16.96893152369654,0 122.1095871115888,16.96894635702372,0 122.1100494657962,16.96903423452652,0 122.1103680789426,16.96909416101922,0 122.1105651544498,16.96911126146618,0 122.1107432189961,16.96910244809393,0 122.1109018625774,16.96909935556648,0 122.1110325860977,16.96911871682199,0 122.1112326732648,16.96914913497049,0 122.1113614429619,16.96917395494064,0 122.111460644646,16.96916816930475,0 122.1116146519187,16.96912625579398,0 122.1117879463551,16.96910338153993,0 122.1119559351861,16.96914980134157,0 122.1121814670548,16.96925602420821,0 122.1124466478899,16.96937236790116,0 122.1127236326518,16.9694775101063,0 122.1130965491727,16.96965002789706,0 122.1133452547118,16.96974247460198,0 122.1135667367211,16.96972783909364,0 122.1139221661017,16.9696667326063,0 122.1141134033399,16.96959519731044,0 122.114393222885,16.96953032802124,0 122.1147345038602,16.96947005966006,0 122.1149475537329,16.96944476515786,0 122.1151009977732,16.96947189965639,0 122.1151919262466,16.9695195040001,0 122.1152893596956,16.96960053458366,0 122.1154003065125,16.96973141290026,0 122.1155197330431,16.96989603668431,0 122.1156745442361,16.97003291216829,0 122.11584628797,16.97014897641668,0 122.1160278067673,16.97023821747869,0 122.1162456637585,16.97034105440854,0 122.1164899646457,16.97048282344932,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

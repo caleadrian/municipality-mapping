@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>So. Pariir.kml</name>
+	<StyleMap id="msn_placemark_circle_copy74">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_placemark_circle_copy520</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_placemark_circle_highlight_copy73</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_placemark_circle_copy520">
+		<IconStyle>
+			<color>ffefd9ff</color>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ffefd9ff</color>
+			<scale>1.2</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_placemark_circle_highlight_copy73">
+		<IconStyle>
+			<color>ffefd9ff</color>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle_highlight.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<color>ffefd9ff</color>
+			<scale>1.2</scale>
+		</LabelStyle>
+	</Style>
+	<Placemark>
+		<name>Pariir</name>
+		<LookAt>
+			<longitude>121.986190632469</longitude>
+			<latitude>16.94863162739272</latitude>
+			<altitude>0</altitude>
+			<heading>-0.05772122992210627</heading>
+			<tilt>2.430532940741063e-011</tilt>
+			<range>7016.47653652694</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#msn_placemark_circle_copy74</styleUrl>
+		<Point>
+			<coordinates>121.9771871685557,16.95580503341745,0</coordinates>
+		</Point>
+	</Placemark>
+</Document>
+</kml>

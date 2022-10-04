@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Jct. Disulap-So. San Isidro (Via. So. Dalayap, Lucban)g5.kml</name>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Jct. Disulap-So. San Isidro (Via. So. Dalayap, Lucban)g5</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0895924077913,16.98062756910578,0 122.0896360241057,16.9806497510793,0 122.0897117484302,16.98066297800181,0 122.0898133145585,16.98066551708147,0 122.0899224314094,16.98065799316619,0 122.0900651458695,16.98063380051737,0 122.0902437722107,16.98058860933312,0 122.0903538325852,16.98055115986612,0 122.0905152357187,16.98050201958812,0 122.0907677713493,16.98044155790419,0 122.0910231793476,16.98037809586629,0 122.0911898678781,16.98036249015927,0 122.091343965664,16.98037102205518,0 122.0915091593879,16.9803832883331,0 122.0916693071904,16.98038989713189,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

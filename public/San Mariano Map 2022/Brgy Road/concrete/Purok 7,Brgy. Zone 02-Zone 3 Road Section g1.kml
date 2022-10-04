@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Purok 7,Brgy. Zone 02-Zone 3 Road Section g1.kml</name>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Purok 7,Brgy. Zone 02-Zone 3 Road Section g1</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0181582249751,16.98482475417077,0 122.018182292172,16.98504088505266,0 122.0181802520587,16.98517230014927,0 122.0181722046538,16.98525999023339,0 122.018157000921,16.98529131476585,0 122.0181303918855,16.98531015034114,0 122.0180183313031,16.98534443961154,0 122.0178705638393,16.98538394937559,0 122.0176630526386,16.98545587907515,0 122.0174911519936,16.98551852074599,0 122.0172550148843,16.98560493732248,0 122.0170354875501,16.98570308864327,0 122.0167745847965,16.9858409387508,0 122.0165728853206,16.98594087419959,0 122.0164755810142,16.98598142340004,0 122.0164062913324,16.98597803044872,0 122.0163196017485,16.98595571098435,0 122.0162011742288,16.98594692949581,0 122.0160863744319,16.98595142580079,0 122.0160098892853,16.98598615897123,0 122.0159265418424,16.98603449497244,0 122.0157291264815,16.98617894903876,0 122.0152894884957,16.98647559424286,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

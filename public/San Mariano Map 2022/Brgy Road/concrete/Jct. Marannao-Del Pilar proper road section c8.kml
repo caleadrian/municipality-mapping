@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Jct. Marannao-Del Pilar proper road section c8.kml</name>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>Jct. Marannao-Del Pilar proper road section c8</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0769065635522,16.8810875638841,0 122.0770543162394,16.88104215296772,0 122.077123259239,16.88101792709959,0 122.0773085701661,16.88099133263154,0 122.0773959286357,16.88098303576658,0 122.0774566823741,16.88095913212835,0 122.0775429386758,16.88090046788875,0 122.0779134448319,16.88060425625715,0 122.0781995432471,16.8803359125286,0 122.0785404736791,16.87996161734237,0 122.0789367104915,16.87953963502556,0 122.0790247032198,16.87939770171791,0 122.0793051003953,16.87894622348206,0 122.0794625646221,16.87874734066323,0 122.0796358152916,16.87850499027505,0 122.0797550207551,16.87830096032055,0 122.0797928816202,16.87824214157718,0 122.0798350634395,16.87817888408292,0 122.0798736083812,16.87812961307381,0 122.0799256986981,16.87808370354529,0 122.0799853409128,16.87804830510905,0 122.0800284956905,16.87802736348394,0 122.0800987367694,16.87802246168209,0 122.080130785826,16.87802487258089,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>So. Dalayap-So. Villa Miranda Road Section c1.kml</name>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>So. Dalayap-So. Villa Miranda Road Section c1</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.1080944627593,16.96711015174816,0 122.1080686241092,16.96729404383016,0 122.1080470740738,16.96744866327677,0 122.1079926344448,16.96764808631789,0 122.1078901644399,16.96791162601182,0 122.1077978022991,16.96807536444907,0 122.1077268920283,16.96815752792449,0 122.1076467892316,16.96825064581301,0 122.1075640693447,16.96835324419238,0 122.1074572232,16.96850591903228,0 122.1073770354144,16.96866115115144,0 122.1072746067653,16.96899296243692,0 122.1071836073065,16.96920575878588,0 122.1070432100146,16.96940661567533,0 122.1068867480894,16.96956849109214,0 122.10676964544,16.96973329516577,0 122.1067150012625,16.9698894444043,0 122.1066297953536,16.97021026428685,0 122.1065918354689,16.97040280427467,0 122.106579165684,16.97060687997965,0 122.1066077767844,16.9707784288601,0 122.1066675670202,16.97100288678403,0 122.1067931467324,16.97137701749859,0 122.1068998800653,16.97175765718036,0 122.1069749119338,16.9720272823593,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

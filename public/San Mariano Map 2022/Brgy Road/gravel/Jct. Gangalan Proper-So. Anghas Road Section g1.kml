@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Jct. Gangalan Proper-So. Anghas Road Section g1.kml</name>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Jct. Gangalan Proper-So. Anghas Road Section g1</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0862322596308,16.89739784608268,0 122.0863496734289,16.89718141959666,0 122.0865208360163,16.89695486169679,0 122.0866442416317,16.89676762894343,0 122.0867468643627,16.89659895790778,0 122.0868279091732,16.89645085781471,0 122.0869204496929,16.89633357067892,0 122.0870839341835,16.89622110525342,0 122.0872871843115,16.89608336500645,0 122.0874470250762,16.89596973090122,0 122.0875880735682,16.89585874325662,0 122.0876760383793,16.89575325372976,0 122.0878238677984,16.89558134902356,0 122.0879564218014,16.89541433383131,0 122.0880844824122,16.89523417264011,0 122.0882418554805,16.89504137454019,0 122.0883976125094,16.89489216891229,0 122.0887335623161,16.89466572052073,0 122.0889243963678,16.89449573514394,0 122.0890757540992,16.8943633752299,0 122.0892080025675,16.89427759503899,0 122.089345120454,16.89421404520616,0 122.0895456920763,16.89414959313485,0 122.0897027077798,16.89408447134491,0 122.0899064106392,16.89399175848499,0 122.0900779813445,16.89388587501191,0 122.0902434660764,16.89377061286822,0 122.0907085494451,16.89343552216619,0 122.0909879357562,16.89325241658703,0 122.0911626825834,16.89313268392735,0 122.091329622234,16.8929910416784,0 122.091565645822,16.89276728567459,0 122.0921997782667,16.89229272714991,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

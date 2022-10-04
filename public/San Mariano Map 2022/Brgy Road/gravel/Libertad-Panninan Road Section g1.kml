@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Libertad-Panninan Road Section g1.kml</name>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>Libertad-Panninan Road Section g1</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.081667764012,16.85373109159166,0 122.0812712948006,16.85373743528096,0 122.0809502075877,16.85373314619422,0 122.0806982166898,16.85372160805329,0 122.0802558298094,16.85371258947348,0 122.0799220843154,16.85370580127057,0 122.079779430455,16.85368435775408,0 122.0797358693006,16.85357960284643,0 122.0797391285747,16.85338133379084,0 122.0797714088717,16.8530346352158,0 122.0797553020735,16.85290947457455,0 122.0796975719463,16.85285623313247,0 122.079622756177,16.85284075728213,0 122.0794884084252,16.85284556094642,0 122.0793321968557,16.85284464357046,0 122.0791604032152,16.85286428910278,0 122.0788398486702,16.85287924769836,0 122.0784394517995,16.85286963782128,0 122.0782090182379,16.85286953144666,0 122.0779432394184,16.85288024668395,0 122.0777250045044,16.85285773859049,0 122.0772983676368,16.85285447235056,0 122.0769205495992,16.85287551976395,0 122.0766472805052,16.85285649561729,0 122.0764754991932,16.8528697780933,0 122.0762838224547,16.85288293492023,0 122.0760782607541,16.852876427294,0 122.0758736697435,16.85286393143846,0 122.0754796627995,16.85285892470252,0 122.0749668558255,16.85283114523991,0 122.074615653743,16.85286699138438,0 122.0734531776,16.85288427578881,0 122.0725481011554,16.85282910876342,0 122.0722287610119,16.85281644574383,0 122.0715622226102,16.85273632345806,0 122.0708534756519,16.85267798659402,0 122.070460231012,16.85264225991825,0 122.0701984431539,16.85268388874206,0 122.0688380308968,16.85274884228058,0 122.0686758037485,16.85280972065369,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

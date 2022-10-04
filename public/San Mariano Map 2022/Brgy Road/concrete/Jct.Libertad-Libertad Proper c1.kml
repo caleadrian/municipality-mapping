@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Jct.Libertad-Libertad Proper c1.kml</name>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Jct.Libertad-Libertad Proper c1</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0826502615988,16.87463182693207,0 122.0826628815189,16.8744039983625,0 122.0826730884115,16.87421276779154,0 122.0826770685452,16.87399099977716,0 122.082668796302,16.8738708315905,0 122.0826829536314,16.87376304116751,0 122.0827168263068,16.8736240715598,0 122.0827323814605,16.87353698986745,0 122.0827380257602,16.8734295529311,0 122.0827278096209,16.87334101199066,0 122.0827070269239,16.87325596542534,0 122.0826725993199,16.87314411930815,0 122.0826512299489,16.87308438213539,0 122.0826445378149,16.87302383499223,0 122.082641670201,16.87294888198563,0 122.0826447861103,16.87287078799301,0 122.0826410816031,16.87279047626019,0 122.0826246611601,16.87269429766354,0 122.0825958397291,16.87262939536398,0 122.0825621416425,16.87257370471485,0 122.0824905397998,16.87250808797834,0 122.082383148813,16.87243626096465,0 122.0823139914365,16.87240387524629,0 122.0822049364072,16.872381942796,0 122.0821009077087,16.87237787532585,0 122.0819636357232,16.87237917143417,0 122.0818974560425,16.87238333425787,0 122.0818421290799,16.87238061553586,0 122.0817955502829,16.872363007122,0 122.0817506451961,16.87233599089,0 122.0817271806522,16.87230368670037,0 122.0817094976112,16.87226882811048,0 122.0817004910421,16.87222612056937,0 122.0816976555727,16.87215849525352,0 122.0817083929421,16.87206464502407,0 122.0817278465892,16.87179552427677,0 122.0817362853537,16.87148681843393,0 122.081734614825,16.87120288699278,0 122.0817269354912,16.87110607297471,0 122.0817109101915,16.87100114844538,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

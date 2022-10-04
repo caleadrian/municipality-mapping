@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Palutan-River side g1.kml</name>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Palutan-River side g1</name>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0001548449193,16.96685650426563,0 122.0002610269974,16.96682100771505,0 122.0004227070894,16.96680052227066,0 122.0007694489189,16.96679216050343,0 122.0011473249348,16.9668304106714,0 122.0014120288889,16.96688655376354,0 122.0017325577249,16.96701481102937,0 122.0024681100408,16.96725228811258,0 122.0030901811086,16.96742897713295,0 122.0037048858253,16.96759800682522,0 122.0047084172219,16.96790973097906,0 122.0051463404344,16.96807060718083,0 122.0053010365843,16.96816980969981,0 122.0053222429872,16.9682925977385,0 122.0052817193546,16.9685113538004,0 122.005212351085,16.9688463196791,0 122.0052966648432,16.96911362647028,0 122.0054914986438,16.96937775082235,0 122.0056721771793,16.96952254345081,0 122.0058557452092,16.96954395116196,0 122.0061136856134,16.96951334824587,0 122.0063277526674,16.96954989327611,0 122.0066226431682,16.96969482839779,0 122.007039585764,16.96990929528926,0 122.0075334621123,16.97012720534628,0 122.0081150393549,16.97034012209959,0 122.0091784066217,16.97070772580344,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

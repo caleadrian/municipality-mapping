@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Jct. Libertad-Libertad Properc3.kml</name>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>Jct. Libertad-Libertad Properc3</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0816190726829,16.85467745810457,0 122.0816471731555,16.85426910335527,0 122.0816659705513,16.85388504557349,0 122.0816689794306,16.85366148004425,0 122.0816715253,16.85336179428541,0 122.0816775944623,16.85320074450723,0 122.0816812895585,16.85311126546326,0 122.0816738241239,16.85305161687521,0 122.081643099521,16.85299938411212,0 122.0815706515745,16.85292792499762,0 122.0814500776145,16.85285122299004,0 122.0813346990789,16.85278048777472,0 122.081231961705,16.85271890164773,0 122.0809107327705,16.85253737973268,0 122.0807439419716,16.85244513903554,0 122.080644282902,16.85237221856923,0 122.0805401078586,16.8522805839546,0 122.0804704720931,16.85219797100851,0 122.0804113584839,16.85211321912518,0 122.0803704411908,16.85199351624904,0 122.080324928208,16.8518522255393,0 122.0802958635991,16.85174843814675,0 122.0802803432082,16.85162179505577,0 122.0802849983246,16.85152395098432,0 122.0803255011938,16.85137619191577,0 122.0803791587222,16.85124508579168,0 122.0804452364088,16.85110266913993,0 122.0805622358764,16.85086320897392,0 122.0807774362408,16.85042197605354,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

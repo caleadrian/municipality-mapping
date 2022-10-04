@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Minanga-Marannao(Via.Cataguing)c1.kml</name>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Minanga-Marannao(Via.Cataguing)</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0275744854888,16.9771778385414,0 122.0275903231392,16.97708327009915,0 122.0275997462879,16.97701037522389,0 122.0276053984233,16.97691215963427,0 122.027600770165,16.97683150718962,0 122.0275997723032,16.97675174956964,0 122.0275991675544,16.97666987007699,0 122.0276082006123,16.97660277740254,0 122.027622157391,16.97654400036202,0 122.0276380668994,16.97647513434941,0 122.0276876373124,16.97632589709184,0 122.027773577552,16.97612333746986,0 122.0278435190231,16.97593757485563,0 122.027890474567,16.97582723211351,0 122.0279111299005,16.97576816523822,0 122.0279258517664,16.97571847892452,0 122.0279302619041,16.97566861143491,0 122.0279322815676,16.97563476661836,0 122.0279272564821,16.97560194873043,0 122.0279154706591,16.97556882734892,0 122.0278978036824,16.97553812839128,0 122.0278781705789,16.97550743818351,0 122.0278420851932,16.97545173695325,0 122.0277455686474,16.97533824586163,0 122.0276285220521,16.97522615692492,0 122.0274990598685,16.97511921993345,0 122.0274543289652,16.97506899830702,0 122.027427204044,16.9750227197347,0 122.0274158481746,16.97497479525662,0 122.0274087048151,16.9749066398791,0 122.0274086650641,16.97480862843164,0 122.0274560323307,16.97444227931471,0 122.0274790680601,16.9742523427837,0 122.0275114845518,16.97394102191894,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

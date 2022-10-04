@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Gangalan-Daragutan East Road Sectionc1.kml</name>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Gangalan-Daragutan East Road Sectionc1</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0519271075235,16.89724567972005,0 122.0520637409641,16.89725149729012,0 122.0522161077163,16.89726101960196,0 122.052379787976,16.8972790001754,0 122.0525755240297,16.89732353173627,0 122.0527444671459,16.89738205894738,0 122.0529001963339,16.8974827589554,0 122.0530542091989,16.89761642810416,0 122.053322408429,16.89783782576053,0 122.0535404604227,16.897985336207,0 122.0537782951541,16.89814307387876,0 122.0538700504678,16.89820029590847,0 122.0539919385662,16.89824399186985,0 122.0541391929182,16.89827376259094,0 122.05442081539,16.89831170906103,0 122.054638352686,16.89832500818329,0 122.0547359879282,16.89830395917671,0 122.0548840146962,16.89824023019147,0 122.0551419542858,16.89810458120182,0 122.0556547773134,16.89778166514904,0 122.0562967085378,16.89736970202897,0 122.0566153301699,16.89717541181584,0 122.0568866492834,16.89703505289673,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

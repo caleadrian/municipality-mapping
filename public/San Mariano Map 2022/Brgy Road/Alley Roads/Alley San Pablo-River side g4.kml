@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Alley San Pablo-River side g4.kml</name>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Alley San Pablo-River side g4</name>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0039636229339,16.95735278714168,0 122.0041290508849,16.95746348765357,0 122.0043617180927,16.95760356842167,0 122.0047608066243,16.95784813810525,0 122.0051851037634,16.95813458617264,0 122.0059626405735,16.95870984886741,0 122.0067660152718,16.95932940901709,0 122.007772336075,16.96010909556549,0 122.0084485606805,16.96063259058077,0 122.0085631647873,16.96072080725332,0 122.0086215147689,16.96073286743045,0 122.008726398989,16.96070738005658,0 122.0088669576255,16.96060357674401,0 122.0092192750418,16.96032597024076,0 122.0094532892752,16.96013017589982,0 122.0095510723445,16.96008699910286,0 122.0096014735063,16.96009382137063,0 122.009674553263,16.96014574575015,0 122.00994964738,16.9604019532378,0 122.0102819556393,16.96068256722235,0 122.0104759130136,16.96081616196239,0 122.0106884592613,16.96093003491019,0 122.0108552216801,16.96100702947075,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

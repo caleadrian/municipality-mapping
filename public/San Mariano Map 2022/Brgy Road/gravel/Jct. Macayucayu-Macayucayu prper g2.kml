@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Jct. Macayucayu-Macayucayu prper g2.kml</name>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Jct. Macayucayu-Macayucayu prper g2</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0474875074069,16.84984740469532,0 122.0476144778041,16.84947975962525,0 122.0476641179384,16.8492591048013,0 122.0476971955842,16.84910360963212,0 122.0476684288254,16.84894498769074,0 122.0475975417339,16.84876234266655,0 122.0474088197725,16.84847685547575,0 122.0472131828832,16.84821176214693,0 122.0470137911905,16.8478568525144,0 122.0469588299199,16.84767028982009,0 122.0469278024105,16.84731989609057,0 122.0469560750404,16.84680423706307,0 122.0469251363899,16.84618071633798,0 122.0469985497436,16.84550755958507,0 122.0470721538469,16.84499391115625,0 122.0471614923489,16.84474322248932,0 122.0476507729094,16.84430450036971,0 122.0478524785586,16.84403796569063,0 122.048085880965,16.84360903196992,0 122.0482247317727,16.84309905591266,0 122.0482753186984,16.84274844706554,0 122.0482315307531,16.84255016458675,0 122.0480939255757,16.84234658486236,0 122.047862119076,16.84216258094047,0 122.0477196844565,16.84211936099151,0 122.0475385421141,16.84211782639415,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

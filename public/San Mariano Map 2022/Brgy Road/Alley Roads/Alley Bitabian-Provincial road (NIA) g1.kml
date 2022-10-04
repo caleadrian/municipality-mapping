@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Bitabian-Provincial road (NIA) g1.kml</name>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Bitabian-Provincial road (NIA) g1</name>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0118285393035,16.9433185310972,0 122.0122225776948,16.94305659747538,0 122.012327704354,16.94300832738321,0 122.0126652485085,16.94295046527517,0 122.0130459399692,16.94284178118945,0 122.0135709202319,16.94267259257369,0 122.013989869316,16.94256374147609,0 122.0144308876613,16.9425199230394,0 122.0149668609493,16.94255134523026,0 122.0153312152797,16.94259100689458,0 122.0160308900434,16.9428050911366,0 122.016820555942,16.94304945854166,0 122.0171999468078,16.94319633637288,0 122.0175992996084,16.94338234918052,0 122.0181728053845,16.94375468972211,0 122.0187775368816,16.94410321558966,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

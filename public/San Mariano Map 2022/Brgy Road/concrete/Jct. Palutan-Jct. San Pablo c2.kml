@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Jct. Palutan-Jct. San Pablo c2.kml</name>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Jct. Palutan-Jct. San Pablo c2</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				121.9989669471123,16.96632714771278,0 121.9989780410374,16.96640038317609,0 121.998984913951,16.96645149199584,0 121.998985770487,16.96651867548908,0 121.9989775086141,16.9666018861371,0 121.9989761529842,16.96668664391454,0 121.9989741527932,16.96672835875811,0 121.9989801921568,16.96676955802215,0 121.9989958621176,16.96680483950043,0 121.9990321259867,16.96685439527591,0 121.9990763505189,16.96689705092989,0 121.9991325774729,16.9669297638468,0 121.9991765442559,16.96695390140382,0 121.999226084821,16.96696561727243,0 121.9992968072397,16.96696995389051,0 121.9994681732772,16.9669839021851,0 121.9995948704929,16.96699428547148,0 121.9997127986944,16.96699654187056,0 121.9998160909926,16.96697167267116,0 121.9999833227661,16.96691895673991,0 122.0001544905208,16.96685673255772,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

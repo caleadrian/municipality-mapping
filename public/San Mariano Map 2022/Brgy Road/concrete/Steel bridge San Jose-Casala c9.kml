@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Steel bridge San Jose-Casala c9.kml</name>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Steel bridge San Jose-Casala c9</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.1288478120383,16.8874386248518,0 122.128461956481,16.88714972297834,0 122.1281509080554,16.88696011926935,0 122.1279183265706,16.88685710303232,0 122.1276788960556,16.88677896256781,0 122.1275865274209,16.8867173260464,0 122.1274853523324,16.8865673105633,0 122.1273400430071,16.88632251328343,0 122.1271871066021,16.88599580065085,0 122.1270924413388,16.88579305577481,0 122.1269785783005,16.88532586800192,0 122.1268797544558,16.88503316303423,0 122.1268018229459,16.88483105396278,0 122.1267615689949,16.88468303949418,0 122.1267311257018,16.88445786889728,0 122.1266986610729,16.88415363280375,0 122.1266536037469,16.8837998571139,0 122.1265942851901,16.8835497324432,0 122.1265311081777,16.88342979568137,0 122.1264730524315,16.8833818488045,0 122.1263740452291,16.88335950641433,0 122.1259167270818,16.8833374026617,0 122.1253428731929,16.88335710659011,0 122.1251929985759,16.8833547607068,0 122.1250937059966,16.88333763288805,0 122.1250337557977,16.88330140696844,0 122.1248530658521,16.88313901586405,0 122.1246618458956,16.88294467528481,0 122.124473999678,16.88273020113557,0 122.1243925594958,16.88260858633199,0 122.1243156704944,16.88247843020888,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>San Jose Proper- So. Diwagden c8.kml</name>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>San Jose Proper- So. Diwagden c8</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.134189380437,16.93291803170683,0 122.1341360449272,16.93285778545032,0 122.1340299314938,16.93286976393295,0 122.1338912901872,16.93291579137272,0 122.1336911924125,16.93301240386905,0 122.1335150166752,16.93310879125853,0 122.1333841318175,16.93319508018324,0 122.1332808336701,16.93330405710347,0 122.1332012349506,16.93345525881044,0 122.1331057134834,16.93359463905399,0 122.1330009523247,16.93369020995562,0 122.1328171247413,16.93382534390958,0 122.1326668660078,16.9339452127036,0 122.132510371155,16.93410697181069,0 122.1324160614541,16.93418661924212,0 122.1323377729746,16.93422989200353,0 122.1322704840637,16.93422925179429,0 122.1321726044291,16.93418336413978,0 122.1320387853926,16.9340907029776,0 122.1319346171112,16.93400517998951,0 122.131725112848,16.93388477508311,0 122.1315792463053,16.93380884429327,0 122.1313571825076,16.93372769081139,0 122.1311826876876,16.93369678008936,0 122.1307525941426,16.93362731339976,0 122.1304530480842,16.93364167968517,0 122.1301277753854,16.93366655542011,0 122.1298315665095,16.93362851706919,0 122.1295838710526,16.933566100053,0 122.1294391232389,16.93350601661562,0 122.1293217114754,16.93341726792201,0 122.1292502932178,16.93340649879745,0 122.1291090999137,16.93344745577965,0 122.1289444296348,16.93352276334895,0 122.128824496471,16.93357515445454,0 122.1285890124114,16.93364229977472,0 122.1283100038364,16.93372535890982,0 122.1279331497636,16.9338603891336,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

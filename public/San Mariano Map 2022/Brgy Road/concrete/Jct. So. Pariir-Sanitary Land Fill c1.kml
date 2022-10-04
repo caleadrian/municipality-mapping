@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Jct. So. Pariir-Sanitary Land Fill c1.kml</name>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>Jct. So. Pariir-Sanitary Land Fill c1</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				121.9931819122324,16.96761631543469,0 121.993082780004,16.96756973763841,0 121.992948326504,16.96754487528911,0 121.9926737527585,16.96751260235603,0 121.9924221469719,16.96747793547504,0 121.9922419936386,16.96744222214934,0 121.9920782313971,16.96740551909493,0 121.9919947154462,16.96738375673575,0 121.9919111048269,16.96736870291315,0 121.9918537358713,16.96736242302099,0 121.9917968357034,16.96738098447764,0 121.9917646367681,16.96743544171963,0 121.9917423974158,16.96750548954054,0 121.9917310775226,16.96763133905117,0 121.9917229657976,16.9677643013104,0 121.9917154975067,16.96782291301419,0 121.9916945604434,16.96789038111792,0 121.9916519819456,16.96794474071429,0 121.9915811677909,16.96799184858811,0 121.9915003234998,16.9680197382833,0 121.9913974492933,16.96804314321336,0 121.991292167173,16.96805100113657,0 121.9911576503295,16.96804558263872,0 121.9910555112611,16.96802134752943,0 121.9909423997407,16.96797985686345,0 121.990700648456,16.96788596786999,0 121.9905478066103,16.96783255425813,0 121.990314715838,16.96774694328214,0 121.9901192892018,16.9676642824177,0 121.9899200142847,16.96757291798454,0 121.9896268407381,16.96746686204575,0 121.9894004639007,16.96739186399123,0 121.989225437055,16.96734713678677,0 121.9890131303683,16.96728019982313,0 121.9887955949041,16.96720011749502,0 121.9886093206747,16.96711289050898,0 121.9883275166857,16.96696443590465,0 121.9879805875386,16.96677237480635,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

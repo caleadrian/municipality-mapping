@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Jct.Alibadabad-Ueg(Via.Marannao,San Pedro,Dipusu,Dar East)c6.kml</name>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>Jct.Alibadabad-Ueg(Via.Marannao,San Pedro,Dipusu,Dar East)g2</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0297831274754,16.93354829948496,0 122.0297766934636,16.93350117357285,0 122.0297624623001,16.93342227193313,0 122.0297517794976,16.93334447523147,0 122.0297341595459,16.93322531282485,0 122.029729073673,16.93308247919274,0 122.0297102400134,16.9328576949574,0 122.0296924505866,16.93260710855379,0 122.0296794769494,16.9324707489709,0 122.0296869368703,16.93237428151489,0 122.0297093977986,16.93228848979327,0 122.0297575700815,16.93221784669981,0 122.0298053652808,16.9321736658502,0 122.0298644793733,16.93214133988467,0 122.0299909339296,16.93209467453535,0 122.0300672553745,16.93206472382263,0 122.0301268897317,16.93203927983082,0 122.0301700077397,16.93200348334892,0 122.030223319825,16.93194191882139,0 122.030269334262,16.93186955364375,0 122.0303348903029,16.93177273169806,0 122.030420131813,16.93167969271596,0 122.0305158216156,16.931602521879,0 122.0306427070232,16.93148667461625,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

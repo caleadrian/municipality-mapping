@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Jct.Alibadabad-Ueg(via.Marannao,San Pedro,Dipusu,Dar east)c2.kml</name>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Jct.Alibadabad-Ueg(via.Marannao,San Pedro,Dipusu,Dar east)c2</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.030035894705,16.93559084429408,0 122.0300140824838,16.93549847772296,0 122.0299943694095,16.93537386131836,0 122.0299875097086,16.93527124928627,0 122.0299878248294,16.93521128881902,0 122.0299862521447,16.93516028918614,0 122.0299823010224,16.93509728678956,0 122.029979416596,16.93504464157039,0 122.0299734345354,16.93498767292632,0 122.0299627335728,16.93491755684187,0 122.0299524826385,16.934873018615,0 122.0299375734172,16.93472241514818,0 122.029920057461,16.93458921385519,0 122.029878103242,16.93441375330875,0 122.0298595127211,16.93431942306709,0 122.0298373769325,16.9342071062358,0 122.0298233833358,16.93410691843852,0 122.0298033843926,16.93383721268696,0 122.0297944196048,16.93373148189576,0 122.0297900686115,16.93364834101175,0 122.0297841652736,16.93354701639,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

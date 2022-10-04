@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Minanga-Marannao(Via. cataguing)c4.kml</name>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>Minanga-Marannao(Via. cataguing)c4</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.019396939864,16.95765983458337,0 122.0193304793795,16.95791646884405,0 122.019234521477,16.95831913125684,0 122.0191677723244,16.95858276556087,0 122.0191123426457,16.95886165417118,0 122.0190863693666,16.95907932114162,0 122.0191063665993,16.95935860386734,0 122.0191110392839,16.95958337832664,0 122.0191158763485,16.96000971115453,0 122.0191049447646,16.96026853790634,0 122.0189898250094,16.96051267971905,0 122.0188898551756,16.96073440386603,0 122.0187405980159,16.96094469603084,0 122.0185774200997,16.96109757641758,0 122.0184125769901,16.96123304775717,0 122.0183181802668,16.96139052523531,0 122.018233433226,16.9615363905362,0 122.0182071846332,16.96167272153374,0 122.0181775205158,16.96190357778791,0 122.0181889763706,16.96219272470557,0 122.0182360767082,16.96244583800785,0 122.0182917204073,16.96263462929092,0 122.0183044451396,16.96289333001353,0 122.018289688038,16.9630867274352,0 122.0182490368519,16.96333623421127,0 122.0181574812712,16.96354857821982,0 122.0180290625536,16.96374666841852,0 122.0178361151577,16.96391316654853,0 122.0175587047666,16.96417166676289,0 122.0171767500146,16.96452066005993,0 122.0169597763375,16.96464709162494,0 122.0168285892538,16.96471660664542,0 122.0167370940045,16.96486449229423,0 122.0167043842758,16.96501506230807,0 122.0167557947235,16.96520963442267,0 122.0167989441251,16.96533405573751,0 122.0167955279643,16.9654570488154,0 122.0167568055915,16.96561981689153,0 122.0167230429188,16.96572270149676,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

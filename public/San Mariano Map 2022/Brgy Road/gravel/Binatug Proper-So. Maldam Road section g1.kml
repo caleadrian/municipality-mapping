@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Binatug Proper-So. Maldam Road section g1.kml</name>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Binatug Proper-So. Maldam Road section g1</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0673714376989,16.94691975760822,0 122.0673755427421,16.94672231755086,0 122.0673905391099,16.94651578077778,0 122.0674046319148,16.9462530117675,0 122.0673933888774,16.9460354603135,0 122.0673410938847,16.94588952526355,0 122.0671897716832,16.94574794372727,0 122.0663308025442,16.94526391680315,0 122.0659908019753,16.94509860347961,0 122.0656784302548,16.94491808561465,0 122.0653791188517,16.94472221149481,0 122.0653076118421,16.94459598180396,0 122.0652765604774,16.94436521182161,0 122.0652444710574,16.94402746160824,0 122.0652267725724,16.94387102902488,0 122.0652625455513,16.94367127210305,0 122.0653748926435,16.94331958654248,0 122.0655253640542,16.9429496738809,0 122.0656876632407,16.94268451617886,0 122.0658054335154,16.94256129118446,0 122.0659278737894,16.94236168828693,0 122.0660323881833,16.94222835788341,0 122.0662353026619,16.94207698900619,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

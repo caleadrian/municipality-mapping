@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Jct.Bitabian-Bitabian Proper c1.kml</name>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>Jct.Bitabian-Bitabian Proper c1</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0135134206575,16.94646920680849,0 122.0136250085477,16.94655671966584,0 122.0137494647973,16.94664597634373,0 122.0138806607893,16.94674949202634,0 122.0139762875833,16.94682153761162,0 122.0140417925585,16.94687037727419,0 122.0141590517398,16.94694053805389,0 122.0142899787007,16.94700096951826,0 122.0143423817754,16.94702682287515,0 122.0145135477957,16.94707570892335,0 122.0146511963732,16.94709723674826,0 122.0147141708581,16.94711504672989,0 122.0147848327481,16.94712873950527,0 122.0149496985132,16.94716303793162,0 122.015045518368,16.94719334572507,0 122.0151370224805,16.94723579410713,0 122.0152003861795,16.94727003456508,0 122.0152939666073,16.94734841249095,0 122.0153956200596,16.9474462759872,0 122.0155221630212,16.94757383622762,0 122.0156534688902,16.94771621201011,0 122.0157636814708,16.9478418106624,0 122.0158428395523,16.94791830007243,0 122.0159847724247,16.9480546998796,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

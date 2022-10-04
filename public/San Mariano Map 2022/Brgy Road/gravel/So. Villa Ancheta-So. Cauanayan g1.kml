@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>So. Villa Ancheta-So. Cauanayan g1.kml</name>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Placemark>
+		<name>So. Villa Ancheta-So. Cauanayan g1</name>
+		<styleUrl>#msn_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				122.0345798622725,17.01257409489217,0 122.0346525917959,17.01266284745137,0 122.0347003771357,17.01271777228864,0 122.0347308028348,17.01276897518806,0 122.0347612443035,17.01283896842098,0 122.0347796770249,17.0129121765695,0 122.0348074905824,17.01304750661508,0 122.0348346442451,17.01326503910981,0 122.0348599212445,17.0134214394557,0 122.0348683325565,17.01348230917378,0 122.0348604256982,17.0135653082751,0 122.0348354433683,17.01371834181559,0 122.0347656914936,17.0139499482894,0 122.0346739325958,17.0142173591881,0 122.0346119332061,17.01432702317604,0 122.0344967707711,17.01446663358104,0 122.0342886160982,17.01465958839036,0 122.0341366203204,17.01478201297013,0 122.0339939588329,17.01492185631187,0 122.0338403164948,17.01510270762951,0 122.0336962522766,17.0152912618363,0 122.0335934286148,17.0154769851114,0 122.0335154273067,17.01563358213253,0 122.0334331998453,17.01589441675964,0 122.0333838688575,17.01608333976987,0 122.0333140776879,17.01621009407309,0 122.0331558449084,17.0163811113668,0 122.0330234804793,17.01653199392784,0 122.0329722452707,17.01666349892447,0 122.0329120532329,17.01686005400904,0 122.032867588663,17.01705760798822,0 122.0328274955573,17.01726917693707,0 122.0328136674832,17.01741791732035,0 122.0328248104122,17.01753574762272,0 122.0328440247717,17.01766764472875,0 122.0328549816106,17.01771780475912,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>
