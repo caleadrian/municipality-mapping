@@ -1,4 +1,3 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 var fs = require('fs');
 import path from 'path'
 import { absoluteUrl } from '../../utils/helper';
