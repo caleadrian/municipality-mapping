@@ -12,10 +12,13 @@ export default async function handler(req, res) {
       const { host } = absoluteUrl(req)
       const data = []
       let walkPath = ''
+      let categoryDirIndex = null
       if (host === 'localhost:3000') {
         walkPath = './public/SanMariano';
+        categoryDirIndex = 3;
       } else {
         walkPath = path.resolve('./public', 'SanMariano')
+        categoryDirIndex = 5;
       }
 
 
@@ -44,7 +47,7 @@ export default async function handler(req, res) {
                   data.push({
                     value: file.replace('./public', ''),
                     label: file.split('\\').pop().split('/').pop().replace(/\.[^/.]+$/, ""),
-                    category: file.split('/')[3]
+                    category: file.split('/')[categoryDirIndex]
                   })
                 }
                 next();

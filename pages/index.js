@@ -64,6 +64,11 @@ export default function Home({ data }) {
 
   useEffect(() => {
     _setOptions(data.files)
+    if (data.files) {
+      console.log('api sucess')
+    } else {
+      console.log('api failed')
+    }
   }, [data])
 
   const lineLayer = {
