@@ -1,20 +1,21 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 var fs = require('fs');
-import { absoluteUrl } from "../../utils/helper"
+import path from 'path'
+import { absoluteUrl } from '../../utils/helper';
 
 export default async function handler(req, res) {
 
   return new Promise(resolve => {
 
     if (req.method === 'GET') {
+
+      const { host } = absoluteUrl(req)
       const data = []
-      const { protocol, host } = absoluteUrl(req)
-      // let walkPath = './public/San Mariano Map 2022/Brgy Road';
-      let walkPath
+      let walkPath = ''
       if (host === 'localhost:3000') {
         walkPath = './public/SanMariano';
       } else {
-        walkPath = 'https://san-mariano-mapping-system.vercel.app/SanMariano';
+        walkPath = path.resolve('./public', 'SanMariano')
       }
 
 
