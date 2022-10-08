@@ -34,7 +34,8 @@ export default async function handler(req, res) {
                 if (file.slice((file.lastIndexOf(".") - 1 >>> 0) + 2) === 'kml') {
                   data.push({
                     value: file.replace('./public', ''),
-                    label: file.split('\\').pop().split('/').pop().replace(/\.[^/.]+$/, "")
+                    label: file.split('\\').pop().split('/').pop().replace(/\.[^/.]+$/, ""),
+                    category: file.split('/')[3]
                   })
                 }
                 next();
