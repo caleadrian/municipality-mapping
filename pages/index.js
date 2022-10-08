@@ -8,7 +8,8 @@ import CustomCheckbox from "../components/CustomCheckbox"
 import * as turf from "@turf/turf"
 import { ExclamationCircleIcon } from '@heroicons/react/24/solid'
 import { MapPinIcon } from '@heroicons/react/24/solid'
-import { Duration } from "luxon";
+import { Duration } from "luxon"
+import { absoluteUrl } from "../utils/helper"
 
 export default function Home({ data }) {
 
@@ -500,9 +501,11 @@ export default function Home({ data }) {
 }
 
 // This gets called on every request
-export async function getServerSideProps() {
+export const getServerSideProps = async ({ req, query }) => {
+  const { protocol, host } = absoluteUrl(req)
+  const url = `${protocol}//${host}/api/hello`
   // Fetch data from external API
-  const res = await fetch(`http://localhost:3000/api/hello`)
+  const res = await fetch(url)
   const data = await res.json()
 
   // Pass data to the page via props
