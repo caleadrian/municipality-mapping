@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 var fs = require('fs');
+import { absoluteUrl } from "../../utils/helper"
 
 export default async function handler(req, res) {
 
@@ -7,8 +8,15 @@ export default async function handler(req, res) {
 
     if (req.method === 'GET') {
       const data = []
+      const { protocol, host } = absoluteUrl(req)
       // let walkPath = './public/San Mariano Map 2022/Brgy Road';
-      let walkPath = './public/San Mariano Map 2022';
+      let walkPath
+      if (host === 'localhost:3000') {
+        walkPath = './public/SanMariano';
+      } else {
+        walkPath = '/SanMariano';
+      }
+
 
       const walk = (dir, done) => {
         fs.readdir(dir, function (error, list) {
