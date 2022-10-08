@@ -14,7 +14,7 @@ export default async function handler(req, res) {
       if (host === 'localhost:3000') {
         walkPath = './public/SanMariano';
       } else {
-        walkPath = '/SanMariano';
+        walkPath = './SanMariano';
       }
 
 
