@@ -13,12 +13,15 @@ export default async function handler(req, res) {
       const data = []
       let walkPath = ''
       let categoryDirIndex = null
+      let pathToReplace = ''
       if (host === 'localhost:3000') {
         walkPath = './public/SanMariano';
         categoryDirIndex = 3;
+        pathToReplace = './public'
       } else {
         walkPath = path.resolve('./public', 'SanMariano')
         categoryDirIndex = 5;
+        pathToReplace = '/var/task/public'
       }
 
 
@@ -45,7 +48,7 @@ export default async function handler(req, res) {
 
                 if (file.slice((file.lastIndexOf(".") - 1 >>> 0) + 2) === 'kml') {
                   data.push({
-                    value: file.replace('./public', ''),
+                    value: file.replace(pathToReplace, ''),
                     label: file.split('\\').pop().split('/').pop().replace(/\.[^/.]+$/, ""),
                     category: file.split('/')[categoryDirIndex]
                   })
