@@ -20,7 +20,8 @@
     "react-click-away-listener": "^2.2.2",
     "react-dom": "18.2.0",
     "react-map-gl": "^7.0.19",
-    "react-select": "^5.4.0"
+    "react-select": "^5.4.0",
+    "react-toastify": "^9.0.8"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.12",

@@ -3,10 +3,13 @@ import AdminHeader, { LayoutStyle, AdminContentLayout } from '../../../component
 import { useRouter } from 'next/router'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { Map, Source, Layer, Popup, NavigationControl, Marker } from 'react-map-gl'
-import { MapPinIcon } from '@heroicons/react/24/solid'
+import { MapPinIcon, ArrowPathIcon } from '@heroicons/react/24/solid'
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import { ref, uploadBytesResumable, getDownloadURL, } from "firebase/storage"
 import { db, storage } from '../../../firebase/config'
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN
 
@@ -18,13 +21,15 @@ function Project() {
     // form states
     const [title, setTitle] = useState('')
     const [desc, setDesc] = useState('')
-    const [file, setFile] = useState()
-    const [inputFile, setInputFile] = useState()
+    const [file, setFile] = useState('')
+    const [inputFile, setInputFile] = useState('')
     const [lng, setLng] = useState('')
     const [lat, setLat] = useState('')
     const [progresspercent, setProgresspercent] = useState()
+    const [isLoading, setIsLoading] = useState(false)
 
     const handlePreview = () => {
+        notify()
         map.current.flyTo(
             {
                 center: [lng, lat],
@@ -52,6 +57,10 @@ function Project() {
 
     const handleSaveProject = (e) => {
         e.preventDefault();
+        setIsLoading(true)
+        const toastId = toast.loading("Saving your new project", {
+            position: 'top-center'
+        })
 
         const storageRef = ref(storage, `files/${file?.name}`);
         const uploadTask = uploadBytesResumable(storageRef, file);
@@ -88,9 +97,11 @@ function Project() {
                             setLng('')
                             setFile('')
                             setInputFile('')
-                            alert('Sucessfully saved')
+                            setIsLoading(false)
+                            toast.update(toastId, { render: "Project saved successfully", type: "success", isLoading: false, autoClose: 3000, position: 'top-center' })
                         }).catch((err) => {
-                            alert('Error while saving, Please report the issue!', err)
+                            toast.update(toastId, { render: "Error while saving", type: "error", isLoading: false, autoClose: 3000, position: 'top-center' })
+                            console.log('Error while saving, Please report the issue!', err)
                         })
                 });
             }
@@ -114,7 +125,7 @@ function Project() {
                         <div className='flex-1 flex'>
 
                             <form
-                                onSubmit={handleSaveProject}
+                                onSubmit={(e) => handleSaveProject(e)}
                                 className='flex-1 flex-grow p-2 flex flex-col space-y-4'>
                                 <div className='flex flex-col'>
                                     <label className='text-sm font-bold text-gray-600 mb-0.5' htmlFor='title'>
@@ -188,6 +199,7 @@ function Project() {
                                         Upload file
                                     </label>
                                     <input
+                                        required
                                         value={inputFile}
                                         onChange={(e) => handleSetFile(e)}
                                         accept=".png,.jpeg,.jpg"
@@ -197,15 +209,18 @@ function Project() {
 
                                 <div className='flex flex-row justify-end gap-x-3'>
                                     <button
+                                        disabled={!lng || !lat}
                                         type='button'
                                         onClick={() => handlePreview()}
-                                        className='text-gray-600 bg-gradient-to-t from-gray-200 to-white border px-5 py-2 rounded-md hover:opacity-90 text-sm shadow'>
+                                        className='text-gray-600 bg-gradient-to-t from-gray-200 to-white border px-5 py-2 rounded-md hover:opacity-90 text-sm shadow disabled:opacity-50 disabled:cursor-not-allowed'>
                                         Preview
                                     </button>
                                     <button
                                         type='submit'
-                                        className='bg-gradient-to-t from-blue-600 to-blue-500 text-white border px-6 py-2 rounded-md hover:opacity-90 text-sm shadow'>
-                                        Save
+                                        className='bg-gradient-to-t from-blue-600 to-blue-500 text-white border px-6 py-2 rounded-md hover:opacity-90 text-sm shadow flex flex-row items-center justify-center min-w-[79px]'>
+                                        {isLoading ? (
+                                            <ArrowPathIcon className='h-5 w-5 text-white animate-spin'></ArrowPathIcon>
+                                        ) : 'Save'}
                                     </button>
                                 </div>
                             </form>
@@ -239,7 +254,8 @@ function Project() {
                     </div>
                 </div>
             </AdminContentLayout>
-
+            <ToastContainer
+                pauseOnHover={false} />
         </div>
     )
 }
