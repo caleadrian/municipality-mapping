@@ -12,6 +12,7 @@
     "@heroicons/react": "^2.0.12",
     "@tmcw/togeojson": "^5.2.2",
     "@turf/turf": "^6.5.0",
+    "firebase": "^9.6.11",
     "luxon": "^3.0.4",
     "mapbox-gl": "^2.10.0",
     "next": "12.3.1",

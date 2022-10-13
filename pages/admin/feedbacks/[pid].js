@@ -11,7 +11,7 @@ function Feedbacks() {
         <div className={LayoutStyle}>
             <AdminHeader></AdminHeader>
             <AdminContentLayout>
-                feedbacks {pid}
+                Feedbacks for project ( project name )
             </AdminContentLayout>
 
         </div>

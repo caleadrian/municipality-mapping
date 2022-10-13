@@ -7,7 +7,7 @@ function Feedbacks() {
             <AdminHeader></AdminHeader>
 
             <AdminContentLayout>
-                feedbacks
+                List of all feedbacks
             </AdminContentLayout>
         </div>
     )
