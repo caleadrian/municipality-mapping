@@ -1,10 +1,12 @@
-import React, { useRef } from 'react'
+import React, { useEffect } from 'react'
 import AdminHeader, { LayoutStyle, AdminContentLayout } from '../../components/AdminHeader'
 import Link from 'next/link'
 
 function Admin() {
 
-
+    useEffect(() => {
+        // console.log('test')
+    }, []);
 
     return (
         <div className={LayoutStyle}>

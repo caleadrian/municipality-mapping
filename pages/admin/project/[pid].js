@@ -86,6 +86,7 @@ function Project() {
                         },
                         file: url,
                         createdAt: serverTimestamp(),
+                        feedbacks: [],
                         createdBy: 'uid'
                     }
 
