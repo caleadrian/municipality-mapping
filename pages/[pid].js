@@ -65,11 +65,12 @@ function SendFeedback() {
 
     const onAuthStateChangedHandler = async (authState) => {
         if (!authState) {
-            console.log(getRedirectResult(auth))
-            getRedirectResult(auth).then(
+            await getRedirectResult(auth).then(
                 (result) => {
                     if (!result) {
                         handleLogin()
+                    } else {
+                        setUser(authState)
                     }
                 }
             )
