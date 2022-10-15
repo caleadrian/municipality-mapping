@@ -69,12 +69,10 @@ function SendFeedback() {
                 (result) => {
                     if (!result) {
                         handleLogin()
-                    } else {
-                        setUser(authState)
                     }
                 }
             )
-            // handleLogin()
+            setUser(authState)
         } else {
             //email
             //uid
