@@ -259,11 +259,7 @@ function SendFeedback() {
                 </div>
             ) : (
                 <div>
-                    <button
-                        onClick={() => handleLogin()}
-                        className='bg-gradient-to-t from-blue-600 to-blue-500 text-white border px-7 py-2 rounded-md hover:opacity-90 text-sm shadow flex flex-row items-center justify-center min-w-[79px]'>
-                        Google Login
-                    </button>
+                    Authenticating ... if the page does not proceed, click <button onClick={() => handleLogin()} className='text-blue-600 font-medium hover:text-blue-400'>here</button>.
                 </div>
             )}
         </>
