@@ -45,9 +45,26 @@ a {
 
 .mapboxgl-popup .mapboxgl-popup-content {
   background-color: white;
+  padding: 0;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.project .mapboxgl-popup .mapboxgl-popup-content {
+
+  width: 300px;
 }
 
 #my-data:hover {
   background-color: red;
   fill: blue;
+}
+
+/* rating  */
+.empty-icons {
+  display: flex !important;
+}
+
+.filled-icons {
+  display: -webkit-inline-box !important;
 }

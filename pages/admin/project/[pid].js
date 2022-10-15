@@ -1,12 +1,13 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import AdminHeader, { LayoutStyle, AdminContentLayout } from '../../../components/AdminHeader'
 import { useRouter } from 'next/router'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { Map, Source, Layer, Popup, NavigationControl, Marker } from 'react-map-gl'
 import { MapPinIcon, ArrowPathIcon } from '@heroicons/react/24/solid'
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
+import { addDoc, doc, collection, serverTimestamp, getDoc, setDoc } from 'firebase/firestore'
 import { ref, uploadBytesResumable, getDownloadURL, } from "firebase/storage"
 import { db, storage } from '../../../firebase/config'
+import Image from 'next/image'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -27,6 +28,47 @@ function Project() {
     const [lat, setLat] = useState('')
     const [progresspercent, setProgresspercent] = useState()
     const [isLoading, setIsLoading] = useState(false)
+    const [imgUrl, setImgUrl] = useState()
+    const [mode, setMode] = useState('add')
+
+    useEffect(() => {
+        if (pid !== 'new') {
+            getProject(pid).then(
+                (data) => {
+                    if (data) {
+                        setMode('edit')
+                        setTitle(data.title)
+                        setDesc(data.title)
+                        setLat(data.coordinates.lat)
+                        setLng(data.coordinates.lng)
+                        setImgUrl(data.file.url)
+                        setInputFile(data.file.name)
+                    }
+                }
+            )
+        } else {
+            setMode('add')
+        }
+    }, [pid]);
+
+    const getProject = async (id) => {
+        try {
+            const myDoc = doc(db, 'Projects', id)
+            return await getDoc(myDoc).then((doc) => {
+                if (doc.exists) {
+                    return doc.data()
+                } else {
+                    return []
+                }
+            }).catch((error) => {
+                console.log(error.message)
+                return []
+            })
+        } catch (err) {
+            console.log(err)
+        }
+
+    }
 
     const handlePreview = () => {
         notify()
@@ -49,15 +91,19 @@ function Project() {
     const handleSetFile = (e) => {
         e.preventDefault()
         const _file = e.target.files[0]
-        if (!_file) return;
-        setFile(_file)
-        setInputFile(e.target.value)
+        if (!_file) {
+            setImgUrl(null)
+            return;
+        } else {
+            setFile(_file)
+            setInputFile(e.target.value)
+            setImgUrl(URL.createObjectURL(_file))
+        }
+
 
     }
 
-    const handleSaveProject = (e) => {
-        e.preventDefault();
-        setIsLoading(true)
+    const addProj = () => {
         const toastId = toast.loading("Saving your new project", {
             position: 'top-center'
         })
@@ -84,7 +130,10 @@ function Project() {
                             lng: lng,
                             lat: lat
                         },
-                        file: url,
+                        file: {
+                            url: url,
+                            name: file?.name
+                        },
                         createdAt: serverTimestamp(),
                         feedbacks: [],
                         createdBy: 'uid'
@@ -107,8 +156,102 @@ function Project() {
                 });
             }
         );
+    }
 
+    const editProj = () => {
+        const toastId = toast.loading("Updating your new project", {
+            position: 'top-center'
+        })
 
+        if (file && inputFile) {
+            const storageRef = ref(storage, `files/${file?.name}`);
+            const uploadTask = uploadBytesResumable(storageRef, file);
+
+            uploadTask.on("state_changed",
+                (snapshot) => {
+                    const progress =
+                        Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+                    setProgresspercent(progress);
+                },
+                (error) => {
+                    alert(error);
+                },
+                () => {
+                    getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+
+                        const docData = {
+                            title: title,
+                            description: desc,
+                            coordinates: {
+                                lng: lng,
+                                lat: lat
+                            },
+                            file: {
+                                url: url,
+                                name: file?.name
+                            },
+                            createdAt: serverTimestamp(),
+                            feedbacks: [],
+                            createdBy: 'uid'
+                        }
+
+                        setDoc(doc(db, 'Projects', pid), docData, { merge: true })
+                            .then(() => {
+                                setTitle('')
+                                setDesc('')
+                                setLat('')
+                                setLng('')
+                                setFile('')
+                                setInputFile('')
+                                setIsLoading(false)
+                                toast.update(toastId, { render: "Project saved successfully", type: "success", isLoading: false, autoClose: 3000, position: 'top-center' })
+                            }).catch((err) => {
+                                toast.update(toastId, { render: "Error while saving", type: "error", isLoading: false, autoClose: 3000, position: 'top-center' })
+                                console.log('Error while saving, Please report the issue!', err)
+                            })
+                    });
+                }
+            );
+        } else {
+            const docData = {
+                title: title,
+                description: desc,
+                coordinates: {
+                    lng: lng,
+                    lat: lat
+                },
+                updatedAt: serverTimestamp(),
+                updatedBy: 'uid'
+            }
+
+            setDoc(doc(db, 'Projects', pid), docData, { merge: true })
+                .then(() => {
+                    setTitle('')
+                    setDesc('')
+                    setLat('')
+                    setLng('')
+                    setFile('')
+                    setInputFile('')
+                    setIsLoading(false)
+                    toast.update(toastId, { render: "Project updated successfully", type: "success", isLoading: false, autoClose: 3000, position: 'top-center' })
+                }).catch((err) => {
+                    toast.update(toastId, { render: "Error while saving", type: "error", isLoading: false, autoClose: 3000, position: 'top-center' })
+                    console.log('Error while saving, Please report the issue!', err)
+                })
+        }
+    }
+
+    const handleSaveProject = (e) => {
+        e.preventDefault();
+        setIsLoading(true)
+
+        if (mode === 'add') {
+            addProj()
+        } else if (mode === 'edit') {
+            editProj()
+        } else {
+            return;
+        }
     }
 
 
@@ -196,12 +339,15 @@ function Project() {
                                 </div>
 
                                 <div className='flex flex-col'>
+                                    {imgUrl && (<div className='relative bg-gray-100 h-40 rounded-md overflow-hidden transition'>
+                                        <Image src={imgUrl} alt='test' layout='fill' objectFit='contain' />
+                                    </div>
+                                    )}
                                     <label className="text-sm font-bold text-gray-600 mb-0.5" htmlFor="file_input">
                                         Upload file
                                     </label>
                                     <input
-                                        required
-                                        value={inputFile}
+                                        required={mode === 'add'}
                                         onChange={(e) => handleSetFile(e)}
                                         accept=".png,.jpeg,.jpg"
                                         className="form-control cursor-pointer border border-gray-300 rounded-sm p-1.5 text-sm" aria-describedby="file_input_help" id="file_input" type="file" />

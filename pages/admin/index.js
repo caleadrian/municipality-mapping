@@ -1,12 +1,35 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import AdminHeader, { LayoutStyle, AdminContentLayout } from '../../components/AdminHeader'
 import Link from 'next/link'
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '../../firebase/config'
+import { ArrowPathIcon } from '@heroicons/react/24/solid'
 
 function Admin() {
 
+    const [projectList, setProjectList] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
+
     useEffect(() => {
-        // console.log('test')
-    }, []);
+        getProjects()
+    }, [])
+
+    const getProjects = async () => {
+        setIsLoading(true)
+        const myDoc = collection(db, 'Projects')
+        const g = await getDocs(myDoc)
+        let projects = g.docs.map(doc => {
+            return {
+                ...doc.data(),
+                createdAt: doc.data().createdAt.toDate(),
+                uid: doc.id
+            }
+        })
+        //sort from latest to oldest
+        projects.reverse((a, b) => a.createdAt.getTime() - b.createdAt.getTime());
+        setProjectList(projects)
+        setIsLoading(false)
+    }
 
     return (
         <div className={LayoutStyle}>
@@ -51,52 +74,45 @@ function Admin() {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                                                <td className="px-6 py-2 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrap">
-                                                    Bridge Construction
-                                                </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrap">
-                                                    Lorem ipsum
-                                                </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrap">
-                                                    <Link href={'/admin/feedbacks/31231'}>
-                                                        <span className='text-blue-600 cursor-pointer'>25</span>
-                                                    </Link>
-                                                </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrap">
-                                                    [12.321312, 4.2312]
-                                                </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrap">
-                                                    <Link href={'/admin/project/123'}>
-                                                        <span className='text-blue-600 cursor-pointer'>Edit</span>
-                                                    </Link>
-                                                </td>
-
-                                            </tr>
-                                            <tr className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                                                <td className="px-6 py-2 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrap">
-                                                    Zone II Day Basketball Court Renovation
-                                                </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrap">
-                                                    Lorem ipsum
-                                                </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrap">
-                                                    <Link href={'/admin/feedbacks/31231'}>
-                                                        <span className='text-blue-600 cursor-pointer'>10</span>
-                                                    </Link>
-                                                </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrap">
-                                                    [12.45, 2.112]
-                                                </td>
-                                                <td className="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrap">
-                                                    <Link href={'/admin/project/123'}>
-                                                        <span className='text-blue-600 cursor-pointer'>Edit</span>
-                                                    </Link>
-                                                </td>
-
-                                            </tr>
+                                            {isLoading && (
+                                                <tr>
+                                                    <td
+                                                        className='py-14 transition duration-300 ease-in-out '
+                                                        colSpan={6}>
+                                                        <div className='flex flex-1 justify-center'>
+                                                            <ArrowPathIcon
+                                                                className='h-6 w-6 text-blue-600 animate-spin'>
+                                                            </ArrowPathIcon>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            )}
+                                            {(projectList && !isLoading) && projectList.map((item, i) => (
+                                                <tr key={i} className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                                                    <td className="px-6 py-2 whitespace-nowrapx text-sm font-medium text-gray-900">{item.uid}</td>
+                                                    <td className="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrapx">
+                                                        {item.title}
+                                                    </td>
+                                                    <td className="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrapx">
+                                                        {item.description}
+                                                    </td>
+                                                    <td className="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrapx">
+                                                        <Link href={'/admin/feedbacks/' + item.uid}>
+                                                            <span className='text-blue-600 cursor-pointer'>
+                                                                {item?.feedbacks.length}
+                                                            </span>
+                                                        </Link>
+                                                    </td>
+                                                    <td className="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrapx">
+                                                        [ {item.coordinates.lng} , {item.coordinates.lat} ]
+                                                    </td>
+                                                    <td className="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrapx">
+                                                        <Link href={'/admin/project/' + item.uid}>
+                                                            <span className='text-blue-600 cursor-pointer'>Edit</span>
+                                                        </Link>
+                                                    </td>
+                                                </tr>
+                                            ))}
                                         </tbody>
                                     </table>
                                 </div>

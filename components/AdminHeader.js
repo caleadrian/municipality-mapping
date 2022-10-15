@@ -8,7 +8,7 @@ function AdminHeader() {
     const [activePath, setActivePath] = useState(0)
 
     useEffect(() => {
-        console.log(router.pathname)
+        // console.log(router.pathname)
         if (router.pathname === '/admin') {
             setActivePath(0)
         } else if (router.pathname === '/admin/feedbacks') {

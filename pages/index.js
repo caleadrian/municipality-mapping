@@ -10,6 +10,11 @@ import { ExclamationCircleIcon } from '@heroicons/react/24/solid'
 import { MapPinIcon } from '@heroicons/react/24/solid'
 import { Duration } from "luxon"
 import { absoluteUrl } from "../utils/helper"
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '../firebase/config'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Rating } from 'react-simple-star-rating'
 
 export default function Home({ data }) {
 
@@ -17,7 +22,7 @@ export default function Home({ data }) {
   const [geojson, setGeojson] = useState(null)
   const [_geojson, _setGeojson] = useState(null)
   const [selected, setSelected] = useState('en')
-  const [selectedCoords, setSelectedCoords] = useState({})
+  const [selectedCoords, setSelectedCoords] = useState()
   const [_options, _setOptions] = useState([])
   const [options, setOptions] = useState([])
   const [showPopup, setShowPopup] = useState(false)
@@ -26,6 +31,33 @@ export default function Home({ data }) {
   const [myCoordinates, setMyCoordinates] = useState()
   const [mapIsLoaded, setMapIsLoaded] = useState(false)
   const map = useRef()
+
+  const [projectList, setProjectList] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    getProjects()
+  }, [])
+
+  const getProjects = async () => {
+    setIsLoading(true)
+    const myDoc = collection(db, 'Projects')
+    const g = await getDocs(myDoc)
+    let projects = g.docs.map(doc => {
+      return {
+        ...doc.data(),
+        label: doc.data().title,
+        value: doc.id,
+        createdAt: doc.data().createdAt.toDate(),
+        uid: doc.id,
+        category: 'project'
+      }
+    })
+    //sort from latest to oldest
+    projects.reverse((a, b) => a.createdAt.getTime() - b.createdAt.getTime());
+    setProjectList(projects)
+    setIsLoading(false)
+  }
 
   const geolocateControlRef = useCallback((ref) => {
     if (mapIsLoaded) {
@@ -36,7 +68,6 @@ export default function Home({ data }) {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
 
   const checkboxFilters = [
     {
@@ -59,6 +90,9 @@ export default function Home({ data }) {
     },
     {
       label: 'River And Creek', category: 'RiverAndCreek'
+    },
+    {
+      label: 'Projects', category: 'project'
     }
   ]
 
@@ -133,6 +167,7 @@ export default function Home({ data }) {
 
         } else if (type === 'Point') {
           coords = d.features[0].geometry.coordinates.slice(0, -1)
+          console.log(d)
           _map.setLayoutProperty('point', 'visibility', 'visible')
           _map.setLayoutProperty('line', 'visibility', 'none')
           _map.setLayoutProperty('outline', 'visibility', 'none')
@@ -171,7 +206,52 @@ export default function Home({ data }) {
 
   const handleSelect = (e) => {
     setSelected(e)
-    loadKML(e.value)
+
+    if (e.category === 'project') {
+      console.log(e)
+      const _map = map.current.getMap()
+      const coords = [e.coordinates.lng, e.coordinates.lat]
+      const d = {
+        type: 'FeatureCollection',
+        features: [
+          {
+            geometry: {
+              coordinates: [e.coordinates.lng, e.coordinates.lat],
+              type: 'Point'
+            },
+            properties: {
+              name: e.title,
+              category: e.category,
+              imgUrl: e.file.url,
+              id: e.uid,
+              desc: e.description,
+              averageRating: e.feedbacks.reduce((acc, array) => acc + array.rating, 0) / e.feedbacks.length,
+              totalFeedbacks: e.feedbacks.length
+            },
+            type: 'Feature'
+          }
+        ]
+      }
+
+      _map.setLayoutProperty('point', 'visibility', 'visible')
+      _map.setLayoutProperty('line', 'visibility', 'none')
+      _map.setLayoutProperty('outline', 'visibility', 'none')
+      setGeojson(d)
+      setSelectedCoords({ ...d, center: coords })
+      map.current.flyTo(
+        {
+          center: coords,
+          zoom: 15,
+          duration: 1500,
+          essential: true
+        }
+      )
+      setShowPopup(true)
+
+    } else {
+      loadKML(e.value)
+
+    }
   }
 
   const handleShowPopup = useCallback(event => {
@@ -184,9 +264,17 @@ export default function Home({ data }) {
 
   const handleSelectFilterCategory = (isCheck, category) => {
     if (isCheck) {
-      const f = _options.filter(item => item.category === category)
-      setOptions(prev => [...prev, ...f])
+      if (category !== 'project') {
+        const f = _options.filter(item => item.category === category)
+        setOptions(prev => [...prev, ...f])
+      } else {
+        // add projects
+        // console.log(projectList)
+        setOptions(prev => [...prev, ...projectList])
+      }
+
     } else {
+      console.log(category)
       setOptions(prev => prev.filter(item => item.category !== category))
     }
   }
@@ -327,7 +415,7 @@ export default function Home({ data }) {
   }
 
   return (
-    <div className='max-w-7xl bg-red-100 mx-auto h-screen relative'>
+    <div className={`max-w-7xl bg-red-100 mx-auto h-screen relative ${selectedCoords && selectedCoords.features[0].properties?.category === 'project' ? 'project' : ''}`}>
 
       {/* floating controls */}
       <div
@@ -425,7 +513,7 @@ export default function Home({ data }) {
                 className="bg-blue-500 text-white w-full font-medium rounded-sm text-xs py-2.5 hover:bg-opacity-80 disabled:bg-opacity-80 disabled:cursor-not-allowed"
                 disabled={!myCoordinates || !geojson}
                 onClick={() => calculateDistance([myCoordinates.longitude, myCoordinates.latitude], getNearestToOrigin(), 'driving')}>
-                Show Distance
+                Get Direction
               </button>
 
             </div>
@@ -464,9 +552,6 @@ export default function Home({ data }) {
         style={{ height: '100vh', position: 'relative', zIndex: 0 }}
         mapStyle='mapbox://styles/mapbox/streets-v9'
       >
-        {/* {geojson && (
-         
-        )} */}
 
         <Source id='my-data' type='geojson' data={geojson}>
           <Layer interactive={true} {...lineLayer} />
@@ -474,13 +559,7 @@ export default function Home({ data }) {
           <Layer interactive={true} {...pointLayer} />
         </Source>
 
-        {/* <Source id='my-data' type='geojson' data={_geojson}>
-          <Layer {...directionLineLayer} />
-        </Source> */}
-
-
         {showPopup && (
-
           <Popup
             closeButton={false}
             longitude={selectedCoords.center[0]}
@@ -488,9 +567,52 @@ export default function Home({ data }) {
             anchor="bottom"
             onClose={() => setShowPopup(false)}>
             <ClickAwayListener onClickAway={() => showPopup ? setShowPopup(false) : null}>
-              <div>
-                {selectedCoords.features[0].properties.name}
-              </div>
+              {
+                selectedCoords.features[0].properties?.category === 'project' ? (
+                  <div className="flex flex-col p-0">
+                    <div className="relative min-h-[120px] bg-gray-50">
+                      <Image src={selectedCoords.features[0].properties.imgUrl}
+                        alt={selectedCoords.features[0].properties.name}
+                        layout='fill' objectFit='cover' />
+                    </div>
+                    <div className="px-5 py-3 flex flex-col">
+                      <div className="text-lg font-medium font-sans">
+                        {selectedCoords.features[0].properties.name}
+                      </div>
+                      <div className="text-gray-500">
+                        {selectedCoords.features[0].properties.desc}
+                      </div>
+                      <div>
+                        <div className='text-xs text-gray-400 flex flex-row items-center gap-x-1'>
+                          {selectedCoords.features[0].properties.averageRating ? selectedCoords.features[0].properties.averageRating : 0}
+                          <Rating
+                            readonly
+                            initialValue={selectedCoords.features[0].properties.averageRating ? selectedCoords.features[0].properties.averageRating : 0}
+                            size={18}
+                            allowFraction
+                          />
+                          ({selectedCoords.features[0].properties.totalFeedbacks})
+                        </div>
+                      </div>
+                    </div>
+                    <div className="px-5 pb-3 flex flex-row justify-end">
+                      <Link href={'/' + selectedCoords.features[0].properties.id}>
+                        <button className="font-sans font-medium text-xs text-blue-600">
+                          Send feedback
+                        </button>
+                      </Link>
+
+                    </div>
+                  </div>
+                ) : (
+                  <div className="px-5 py-2">
+                    <div className="text-sm font-medium font-sans text-center capitalize">
+                      {selectedCoords.features[0].properties.name}
+                    </div>
+                  </div>
+                )
+              }
+
             </ClickAwayListener>
           </Popup>
         )}
