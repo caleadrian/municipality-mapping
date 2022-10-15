@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
-import { GoogleAuthProvider, getAuth, signInWithRedirect, signOut } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, signInWithRedirect, signOut, getRedirectResult } from "firebase/auth";
 import { app } from '../firebase/config'
 import { addDoc, doc, collection, serverTimestamp, getDoc, setDoc, Timestamp } from 'firebase/firestore'
 import { db, storage } from '../firebase/config'
@@ -61,9 +61,19 @@ function SendFeedback() {
     }, [user, pid, project])
 
 
+
+
     const onAuthStateChangedHandler = async (authState) => {
         if (!authState) {
-            handleLogin()
+            console.log(getRedirectResult(auth))
+            getRedirectResult(auth).then(
+                (result) => {
+                    if (!result) {
+                        handleLogin()
+                    }
+                }
+            )
+            // handleLogin()
         } else {
             //email
             //uid
