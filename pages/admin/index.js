@@ -36,6 +36,9 @@ function Admin() {
             <AdminHeader></AdminHeader>
 
             <AdminContentLayout>
+                <h1 className='font-serif font-medium text-3xl mb-3'>
+                    Projects
+                </h1>
                 <div className='mt-5'>
                     <div className='flex justify-end'>
                         <Link href={'/admin/project/new'}>
@@ -89,7 +92,7 @@ function Admin() {
                                             )}
                                             {(projectList && !isLoading) && projectList.map((item, i) => (
                                                 <tr key={i} className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                                                    <td className="px-6 py-2 whitespace-nowrapx text-sm font-medium text-gray-900">{item.uid}</td>
+                                                    <td className="px-6 py-2 text-xs font-medium text-gray-900">{item.uid}</td>
                                                     <td className="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrapx">
                                                         {item.title}
                                                     </td>

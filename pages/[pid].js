@@ -69,6 +69,8 @@ function SendFeedback() {
                 (result) => {
                     if (!result) {
                         handleLogin()
+                    } else {
+                        setUser(authState)
                     }
                 }
             )
