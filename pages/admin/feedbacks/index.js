@@ -4,17 +4,15 @@ import { ArrowPathIcon } from '@heroicons/react/24/solid'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../../../firebase/config'
 import { DateTime } from "luxon"
-import { useNoInitialEffect } from '../../../utils/helper'
 
 function Feedbacks() {
 
     const [feedbackList, setFeedbackList] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
 
-    useNoInitialEffect(() => {
+    useEffect(() => {
         if (!feedbackList) {
             getFeedbacks()
-
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
