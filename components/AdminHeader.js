@@ -1,11 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { GoogleAuthProvider, getAuth, signInWithPopup, signOut, getRedirectResult } from "firebase/auth";
+import { app } from '../firebase/config'
+import { checkifAdmin } from '../utils/helper'
 
 function AdminHeader() {
 
     const router = useRouter()
+    const provider = new GoogleAuthProvider()
+    const auth = getAuth(app)
     const [activePath, setActivePath] = useState(0)
+    const onAuthStateChangedSubs = useRef()
 
     useEffect(() => {
         // console.log(router.pathname)
@@ -17,6 +23,33 @@ function AdminHeader() {
             setActivePath(null)
         }
     }, [router]);
+
+    useEffect(() => {
+        onAuthStateChangedSubs.current = auth.onAuthStateChanged(onAuthStateChangedHandler)
+
+        return () => onAuthStateChangedSubs.current()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    const onAuthStateChangedHandler = async (authState) => {
+        if (authState) {
+            const result = await checkifAdmin(authState.uid)
+            if (!result) {
+                router.push('/admin/login')
+            }
+        } else {
+            router.push('/admin/login')
+        }
+    }
+
+    const handleLogout = async () => {
+        onAuthStateChangedSubs.current()
+        await signOut(auth).then(() => {
+            router.push('/admin/login')
+        }).catch((err) => {
+            console.log(err)
+        });
+    }
 
     return (
         <div
@@ -36,7 +69,7 @@ function AdminHeader() {
                 <Link href={'/admin/feedbacks'}>
                     <div className={`${activePath === 1 ? 'text-blue-700' : ''} cursor-pointer`}>Feedbacks</div>
                 </Link>
-                <button>Logout</button>
+                <button onClick={() => handleLogout()}>Logout</button>
             </div>
         </div>
     )

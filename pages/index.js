@@ -415,7 +415,7 @@ export default function Home({ data }) {
   }
 
   return (
-    <div className={`max-w-7xl bg-red-100 mx-auto h-screen relative ${selectedCoords && selectedCoords.features[0].properties?.category === 'project' ? 'project' : ''}`}>
+    <div className={`max-w-7xl bg-mesh mx-auto h-screen relative ${selectedCoords && selectedCoords.features[0].properties?.category === 'project' ? 'project' : ''}`}>
 
       {/* floating controls */}
       <div
@@ -570,14 +570,19 @@ export default function Home({ data }) {
               {
                 selectedCoords.features[0].properties?.category === 'project' ? (
                   <div className="flex flex-col p-0">
-                    <div className="relative min-h-[120px] bg-gray-50">
-                      <Image src={selectedCoords.features[0].properties.imgUrl}
-                        alt={selectedCoords.features[0].properties.name}
-                        layout='fill' objectFit='cover' />
+                    <div className="relative min-h-[120px] bg-mesh opacity-80">
+                      {selectedCoords.features[0].properties.imgUrl && (
+                        <Image src={selectedCoords.features[0].properties.imgUrl}
+                          alt={selectedCoords.features[0].properties.name}
+                          layout='fill' objectFit='cover' />
+                      )}
+
                     </div>
                     <div className="px-5 py-3 flex flex-col">
-                      <div className="text-lg font-medium font-sans">
-                        {selectedCoords.features[0].properties.name}
+                      <div className="text-lg font-medium font-sans hover:opacity-80">
+                        <Link href={'/' + selectedCoords.features[0].properties.id}>
+                          {selectedCoords.features[0].properties.name}
+                        </Link>
                       </div>
                       <div className="text-gray-500">
                         {selectedCoords.features[0].properties.desc}
@@ -596,7 +601,7 @@ export default function Home({ data }) {
                       </div>
                     </div>
                     <div className="px-5 pb-3 flex flex-row justify-end">
-                      <Link href={'/' + selectedCoords.features[0].properties.id}>
+                      <Link href={'/' + selectedCoords.features[0].properties.id + '#feedbackForm'}>
                         <button className="font-sans font-medium text-xs text-blue-600">
                           Send feedback
                         </button>

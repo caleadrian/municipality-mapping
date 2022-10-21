@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 import { GoogleAuthProvider, getAuth, signInWithRedirect, signOut, getRedirectResult } from "firebase/auth";
-import { app } from '../firebase/config'
 import { addDoc, doc, collection, serverTimestamp, getDoc, setDoc, Timestamp } from 'firebase/firestore'
-import { db, storage } from '../firebase/config'
+import { db, app } from '../firebase/config'
 import { Rating } from 'react-simple-star-rating'
 import Image from 'next/image';
 import Link from 'next/link';
@@ -185,7 +184,11 @@ function SendFeedback() {
                         <div className='flex flex-row justify-between flex-1 max-w-5xl mx-auto px-2 py-3 sm:px-4'>
                             <div>Hi, {user.displayName.split(' ')[0]}! 👋</div>
 
-                            <div>
+
+                            <div className='flex gap-x-5'>
+                                <Link href={'/'}>
+                                    <button className='text-blue-600 font-medium'>Home</button>
+                                </Link>
                                 <button onClick={() => handleLogout()} className='text-blue-600 font-medium'>Logout</button>
                             </div>
                         </div>
@@ -195,28 +198,57 @@ function SendFeedback() {
                         <div className='text-2xl sm:text-3xl font-serif font-medium mb-2 mx-2'>Send Feedback</div>
                         {project ? (
                             <>
-                                <div className='relative h-52 sm:h-64'>
-                                    <Image priority src={project.file.url} alt='test' layout='fill' objectFit='cover' />
-                                </div>
-                                <div className='px-2 py-3'>
-                                    <div className='text-xs text-gray-400 flex flex-row items-center gap-x-1'>
-                                        {project.averageRating ? project.averageRating : 0}
-                                        <Rating
-                                            readonly
-                                            initialValue={project.averageRating ? project.averageRating : 0}
-                                            size={18}
-                                            allowFraction
-                                        />
-                                        ({project.totalFeedbacks})
-                                    </div>
-                                    <div className='font-sans text-xl font-medium'>{project.title}</div>
+                                <div>
+                                    <div className='relative h-52 sm:h-64 bg-gray-200'>
+                                        {project.file.url && (
+                                            <Image priority src={project.file.url} alt='test' layout='fill' objectFit='cover' />
+                                        )}
 
-                                    <div className='text-gray-600 sm:text-sm'>{project.description}</div>
+                                    </div>
+                                    <div className='px-2 py-3'>
+                                        <div className='text-xs text-gray-400 flex flex-row items-center gap-x-1'>
+                                            {project.averageRating ? project.averageRating : 0}
+                                            <Rating
+                                                readonly
+                                                initialValue={project.averageRating ? project.averageRating : 0}
+                                                size={18}
+                                                allowFraction
+                                            />
+                                            ({project.totalFeedbacks})
+                                        </div>
+                                        <div className='font-sans text-xl font-medium'>{project.title}</div>
+
+                                        <div className='text-gray-600 sm:text-sm'>{project.description}</div>
+
+                                        <div className='flex flex-col space-y-1 mt-2'>
+                                            <div className='flex flex-row flex-1 px-2 py-1.5 bg-blue-50 text-slate-600 text-sm gap-x-1'>
+                                                <div className='justify-center flex flex-1 font-semibold'>Start Date</div>
+                                                <div className='justify-center flex flex-1'>{project.startDate}</div>
+                                            </div>
+                                            <div className='flex flex-row flex-1 px-2 py-1.5 bg-blue-50 text-slate-600 text-sm gap-x-1'>
+                                                <div className='justify-center flex flex-1 font-semibold'>Target Date</div>
+                                                <div className='justify-center flex flex-1'>{project.targetDate}</div>
+                                            </div>
+                                            <div className='flex flex-row flex-1 px-2 py-1.5 bg-blue-50 text-slate-600 text-sm gap-x-1'>
+                                                <div className='justify-center flex flex-1 font-semibold'>Total Cost</div>
+                                                <div className='justify-center flex flex-1'>{parseInt(project.totalCost).toLocaleString('en-US', {
+                                                    style: 'currency', currency: 'PHP'
+                                                })}</div>
+                                            </div>
+
+                                            <div className='flex flex-row flex-1 px-2 py-1.5 bg-blue-50 text-slate-600 text-sm gap-x-1'>
+                                                <div className='justify-center flex flex-1 font-semibold'>Status</div>
+                                                <div className='justify-center flex flex-1 capitalize'>{project.status}</div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
                                 </div>
 
                                 <div className='w-11/12 h-[1px] bg-gray-200 mx-auto my-5'></div>
 
-                                <div className='m-3 sm:mx-0 rounded-md p-2 flex flex-col space-y-3'>
+                                <div id='' className='m-3 sm:mx-0 rounded-md p-2 flex flex-col space-y-3'>
                                     <div className='flex flex-ro justify-center'>
                                         <Rating
                                             initialValue={rating}

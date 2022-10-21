@@ -68,3 +68,27 @@ a {
 .filled-icons {
   display: -webkit-inline-box !important;
 }
+
+.bg-mesh {
+  background-color: #ffdd99;
+  background-image:
+    radial-gradient(at 77% 36%, hsla(198, 83%, 75%, 1) 0px, transparent 50%),
+    radial-gradient(at 55% 61%, hsla(306, 75%, 70%, 1) 0px, transparent 50%),
+    radial-gradient(at 65% 57%, hsla(314, 63%, 71%, 1) 0px, transparent 50%),
+    radial-gradient(at 47% 33%, hsla(85, 89%, 78%, 1) 0px, transparent 50%),
+    radial-gradient(at 91% 26%, hsla(105, 66%, 64%, 1) 0px, transparent 50%),
+    radial-gradient(at 31% 86%, hsla(330, 88%, 74%, 1) 0px, transparent 50%),
+    radial-gradient(at 59% 37%, hsla(325, 61%, 65%, 1) 0px, transparent 50%);
+}
+
+.admin-bg-mesh {
+  background-color: #999eff;
+  background-image:
+    radial-gradient(at 56% 87%, hsla(323, 100%, 95%, 1) 0px, transparent 50%),
+    radial-gradient(at 1% 76%, hsla(172, 100%, 95%, 1) 0px, transparent 50%),
+    radial-gradient(at 21% 58%, hsla(290, 100%, 95%, 1) 0px, transparent 50%),
+    radial-gradient(at 38% 40%, hsla(271, 100%, 95%, 1) 0px, transparent 50%),
+    radial-gradient(at 53% 27%, hsla(163, 100%, 95%, 1) 0px, transparent 50%),
+    radial-gradient(at 14% 49%, hsla(63, 100%, 95%, 1) 0px, transparent 50%),
+    radial-gradient(at 43% 55%, hsla(37, 100%, 95%, 1) 0px, transparent 50%);
+}

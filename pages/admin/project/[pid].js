@@ -8,6 +8,7 @@ import { addDoc, doc, collection, serverTimestamp, getDoc, setDoc } from 'fireba
 import { ref, uploadBytesResumable, getDownloadURL, } from "firebase/storage"
 import { db, storage } from '../../../firebase/config'
 import Image from 'next/image'
+import { XMarkIcon } from '@heroicons/react/24/solid'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -22,8 +23,12 @@ function Project() {
     // form states
     const [title, setTitle] = useState('')
     const [desc, setDesc] = useState('')
+    const [startDate, setStartDate] = useState(new Date("yyyy-MM-dd"))
+    const [endDate, setEndDate] = useState(new Date("yyyy-MM-dd"))
+    const [totalCost, setTotalCost] = useState(0)
     const [file, setFile] = useState('')
     const [inputFile, setInputFile] = useState('')
+    const [status, setStatus] = useState('finished')
     const [lng, setLng] = useState('')
     const [lat, setLat] = useState('')
     const [progresspercent, setProgresspercent] = useState()
@@ -32,7 +37,10 @@ function Project() {
     const [mode, setMode] = useState('add')
 
     useEffect(() => {
-        if (pid !== 'new') {
+        if (pid === 'new') {
+            setMode('add')
+
+        } else {
             getProject(pid).then(
                 (data) => {
                     if (data) {
@@ -41,17 +49,19 @@ function Project() {
                         setDesc(data.title)
                         setLat(data.coordinates.lat)
                         setLng(data.coordinates.lng)
-                        setImgUrl(data.file.url)
-                        setInputFile(data.file.name)
+                        setStartDate(data.startDate ? data.startDate : new Date("yyyy-MM-dd"))
+                        setEndDate(data.targetDate ? data.targetDate : new Date("yyyy-MM-dd"))
+                        setTotalCost(data.totalCost)
+                        setStatus(data.status)
+                        setImgUrl(data?.file?.url ? data.file.url : '')
+                        setInputFile(data?.file?.name ? data.file.name : '')
                     }
                 }
             )
-        } else {
-            setMode('add')
         }
     }, [pid]);
 
-    const getProject = async (id) => {
+    const getProject = async (id = 0) => {
         try {
             const myDoc = doc(db, 'Projects', id)
             return await getDoc(myDoc).then((doc) => {
@@ -65,7 +75,6 @@ function Project() {
                 return []
             })
         } catch (err) {
-            console.log(err)
         }
 
     }
@@ -108,61 +117,6 @@ function Project() {
             position: 'top-center'
         })
 
-        const storageRef = ref(storage, `files/${file?.name}`);
-        const uploadTask = uploadBytesResumable(storageRef, file);
-
-        uploadTask.on("state_changed",
-            (snapshot) => {
-                const progress =
-                    Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-                setProgresspercent(progress);
-            },
-            (error) => {
-                alert(error);
-            },
-            () => {
-                getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-
-                    const docData = {
-                        title: title,
-                        description: desc,
-                        coordinates: {
-                            lng: lng,
-                            lat: lat
-                        },
-                        file: {
-                            url: url,
-                            name: file?.name
-                        },
-                        createdAt: serverTimestamp(),
-                        feedbacks: [],
-                        createdBy: 'uid'
-                    }
-
-                    addDoc(collection(db, 'Projects'), docData)
-                        .then(() => {
-                            setTitle('')
-                            setDesc('')
-                            setLat('')
-                            setLng('')
-                            setFile('')
-                            setInputFile('')
-                            setIsLoading(false)
-                            toast.update(toastId, { render: "Project saved successfully", type: "success", isLoading: false, autoClose: 3000, position: 'top-center' })
-                        }).catch((err) => {
-                            toast.update(toastId, { render: "Error while saving", type: "error", isLoading: false, autoClose: 3000, position: 'top-center' })
-                            console.log('Error while saving, Please report the issue!', err)
-                        })
-                });
-            }
-        );
-    }
-
-    const editProj = () => {
-        const toastId = toast.loading("Updating your new project", {
-            position: 'top-center'
-        })
-
         if (file && inputFile) {
             const storageRef = ref(storage, `files/${file?.name}`);
             const uploadTask = uploadBytesResumable(storageRef, file);
@@ -190,12 +144,16 @@ function Project() {
                                 url: url,
                                 name: file?.name
                             },
+                            startDate: startDate,
+                            targetDate: endDate,
+                            totalCost: totalCost,
+                            status: status,
                             createdAt: serverTimestamp(),
                             feedbacks: [],
                             createdBy: 'uid'
                         }
 
-                        setDoc(doc(db, 'Projects', pid), docData, { merge: true })
+                        addDoc(collection(db, 'Projects'), docData)
                             .then(() => {
                                 setTitle('')
                                 setDesc('')
@@ -213,6 +171,9 @@ function Project() {
                 }
             );
         } else {
+
+
+
             const docData = {
                 title: title,
                 description: desc,
@@ -220,11 +181,16 @@ function Project() {
                     lng: lng,
                     lat: lat
                 },
-                updatedAt: serverTimestamp(),
-                updatedBy: 'uid'
+                startDate: startDate,
+                targetDate: endDate,
+                totalCost: totalCost,
+                status: status,
+                createdAt: serverTimestamp(),
+                feedbacks: [],
+                createdBy: 'uid'
             }
 
-            setDoc(doc(db, 'Projects', pid), docData, { merge: true })
+            addDoc(collection(db, 'Projects'), docData)
                 .then(() => {
                     setTitle('')
                     setDesc('')
@@ -232,6 +198,87 @@ function Project() {
                     setLng('')
                     setFile('')
                     setInputFile('')
+                    setIsLoading(false)
+                    toast.update(toastId, { render: "Project saved successfully", type: "success", isLoading: false, autoClose: 3000, position: 'top-center' })
+                }).catch((err) => {
+                    toast.update(toastId, { render: "Error while saving", type: "error", isLoading: false, autoClose: 3000, position: 'top-center' })
+                    console.log('Error while saving, Please report the issue!', err)
+                })
+        }
+    }
+
+    const editProj = () => {
+        const toastId = toast.loading("Updating your new project", {
+            position: 'top-center'
+        })
+        if (file && inputFile) {
+            const storageRef = ref(storage, `files/${file?.name}`);
+            const uploadTask = uploadBytesResumable(storageRef, file);
+
+            uploadTask.on("state_changed",
+                (snapshot) => {
+                    const progress =
+                        Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+                    setProgresspercent(progress);
+                },
+                (error) => {
+                    alert(error);
+                },
+                () => {
+                    getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+
+                        const docData = {
+                            title: title,
+                            description: desc,
+                            coordinates: {
+                                lng: lng,
+                                lat: lat
+                            },
+                            file: {
+                                url: url,
+                                name: file?.name
+                            },
+                            startDate: startDate,
+                            targetDate: endDate,
+                            totalCost: totalCost,
+                            status: status,
+                            updatedAt: serverTimestamp(),
+                            updatedBy: 'uid'
+                        }
+
+                        setDoc(doc(db, 'Projects', pid), docData, { merge: true })
+                            .then(() => {
+                                setIsLoading(false)
+                                toast.update(toastId, { render: "Project saved successfully", type: "success", isLoading: false, autoClose: 3000, position: 'top-center' })
+                            }).catch((err) => {
+                                toast.update(toastId, { render: "Error while saving", type: "error", isLoading: false, autoClose: 3000, position: 'top-center' })
+                                console.log('Error while saving, Please report the issue!', err)
+                            })
+                    });
+                }
+            );
+        } else {
+            const docData = {
+                title: title,
+                description: desc,
+                coordinates: {
+                    lng: lng,
+                    lat: lat
+                },
+                startDate: startDate,
+                targetDate: endDate,
+                totalCost: totalCost,
+                status: status,
+                updatedAt: serverTimestamp(),
+                updatedBy: 'uid'
+            }
+
+            if (!imgUrl) {
+                docData.file = {}
+            }
+
+            setDoc(doc(db, 'Projects', pid), docData, { merge: true })
+                .then(() => {
                     setIsLoading(false)
                     toast.update(toastId, { render: "Project updated successfully", type: "success", isLoading: false, autoClose: 3000, position: 'top-center' })
                 }).catch((err) => {
@@ -252,6 +299,12 @@ function Project() {
         } else {
             return;
         }
+    }
+
+    const handleRemoveFile = () => {
+        setImgUrl('')
+        setFile('')
+        setInputFile('')
     }
 
 
@@ -298,6 +351,64 @@ function Project() {
                                     </textarea>
                                 </div>
 
+                                <div className='flex flex-row justify-between gap-x-3'>
+                                    <div className='flex flex-col flex-1'>
+                                        <label className='text-sm font-bold text-gray-600 mb-0.5' htmlFor='date'>
+                                            Start Date
+                                        </label>
+                                        <input
+                                            value={startDate && startDate}
+                                            max={new Date(endDate, "yyyy-MM-dd")}
+                                            onChange={(e) => setStartDate(e.target.value)}
+                                            required
+                                            placeholder='Enter project title'
+                                            className='border border-gray-300 rounded-sm px-2 py-1.5 text-sm'
+                                            id='date' type='date' />
+                                    </div>
+                                    <div className='flex flex-col flex-1'>
+                                        <label className='text-sm font-bold text-gray-600 mb-0.5' htmlFor='date'>
+                                            Target Date
+                                        </label>
+                                        <input
+                                            value={endDate && endDate}
+
+                                            onChange={(e) => setEndDate(e.target.value)}
+                                            min={new Date(startDate, "yyyy-MM-dd")}
+                                            required
+                                            placeholder='Enter project title'
+                                            className='border border-gray-300 rounded-sm px-2 py-1.5 text-sm'
+                                            id='date' type='date' />
+                                    </div>
+                                </div>
+
+                                <div className='flex flex-col'>
+                                    <label className='text-sm font-bold text-gray-600 mb-0.5' htmlFor='title'>
+                                        Total Cost
+                                    </label>
+                                    <input
+                                        required
+                                        value={totalCost}
+                                        onChange={(e) => setTotalCost(e.target.value)}
+                                        placeholder='Enter project title'
+                                        className='border border-gray-300 rounded-sm px-2 py-1.5 text-sm'
+                                        id='title' type='number' />
+                                </div>
+
+                                <div className='flex flex-col'>
+                                    <label className='text-sm font-bold text-gray-600 mb-0.5' htmlFor='status'>
+                                        Status
+                                    </label>
+                                    <select
+                                        onChange={(e) => setStatus(e.target.value)}
+                                        value={status}
+                                        className='border border-gray-300 rounded-sm px-2 py-1.5 text-sm' id="status" placeholder='Select project status'>
+                                        <option value="cancelled">Cancelled</option>
+                                        <option value="ongoing">Ongoing</option>
+                                        <option value="finished">Finished</option>
+                                    </select>
+                                </div>
+
+
                                 <div className='flex flex-col'>
                                     <label className='text-sm font-bold text-gray-600 mb-0.5' htmlFor='lng'>
                                         Coordinates *
@@ -340,14 +451,19 @@ function Project() {
 
                                 <div className='flex flex-col'>
                                     {imgUrl && (<div className='relative bg-gray-100 h-40 rounded-md overflow-hidden transition'>
-                                        <Image src={imgUrl} alt='test' layout='fill' objectFit='contain' />
+                                        <button
+                                            title='Remove Picture'
+                                            onClick={() => handleRemoveFile()}
+                                            type='button' className='absolute right-2 top-2 bg-blue-500 rounded-full p-1 z-10 cursor-pointer hover:bg-blue-400'>
+                                            <XMarkIcon className='h-4 w-4 text-white'></XMarkIcon>
+                                        </button>
+                                        <Image src={imgUrl} alt='test' layout='fill' objectFit='contain' priority={true} />
                                     </div>
                                     )}
                                     <label className="text-sm font-bold text-gray-600 mb-0.5" htmlFor="file_input">
                                         Upload file
                                     </label>
                                     <input
-                                        required={mode === 'add'}
                                         onChange={(e) => handleSetFile(e)}
                                         accept=".png,.jpeg,.jpg"
                                         className="form-control cursor-pointer border border-gray-300 rounded-sm p-1.5 text-sm" aria-describedby="file_input_help" id="file_input" type="file" />

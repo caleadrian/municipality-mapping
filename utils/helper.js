@@ -1,5 +1,9 @@
 import { useRef, useEffect } from 'react';
 import { DateTime } from 'luxon';
+import { doc, getDoc } from 'firebase/firestore'
+import { db } from '../firebase/config'
+
+
 /**
  * @param effect
  * @param dependencies
@@ -43,18 +47,17 @@ export const absoluteUrl = (req, setLocalhost) => {
     }
 }
 
-const units = [
-    'year',
-    'month',
-    'week',
-    'day',
-    'hour',
-    'minute',
-    'second',
-];
-
-
 export const timeAgo = (date) => {
+    const units = [
+        'year',
+        'month',
+        'week',
+        'day',
+        'hour',
+        'minute',
+        'second',
+    ];
+
     let dateTime = DateTime.fromISO(date)
     const diff = dateTime.diffNow().shiftTo(...units);
     const unit = units.find((unit) => diff.get(unit) !== 0) || 'second';
@@ -63,4 +66,21 @@ export const timeAgo = (date) => {
         numeric: 'auto',
     });
     return relativeFormatter.format(Math.trunc(diff.as(unit)), unit);
-};
+}
+
+export const checkifAdmin = async (uid) => {
+
+    return await getDoc(doc(db, 'Admin', uid)).then((doc) => {
+        if (doc.exists()) {
+            const d = doc.data()
+            return d.enabled
+        } else {
+            return false
+        }
+    }).catch((error) => {
+        console.log('Error while getting admin data', error.message)
+        return false
+    })
+
+}
+
