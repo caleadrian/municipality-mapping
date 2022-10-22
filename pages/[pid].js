@@ -189,7 +189,7 @@ function SendFeedback() {
                                 <Link href={'/'}>
                                     <button className='text-blue-600 font-medium'>Home</button>
                                 </Link>
-                                <button onClick={() => handleLogout()} className='text-blue-600 font-medium'>Logout</button>
+                                {/* <button onClick={() => handleLogout()} className='text-blue-600 font-medium'>Logout</button> */}
                             </div>
                         </div>
                     </div>
@@ -206,6 +206,8 @@ function SendFeedback() {
 
                                     </div>
                                     <div className='px-2 py-3'>
+
+                                        <div className='font-sans text-xl xs:text-lg font-medium'>{project.title}</div>
                                         <div className='text-xs text-gray-400 flex flex-row items-center gap-x-1'>
                                             {project.averageRating ? project.averageRating : 0}
                                             <Rating
@@ -216,9 +218,7 @@ function SendFeedback() {
                                             />
                                             ({project.totalFeedbacks})
                                         </div>
-                                        <div className='font-sans text-xl font-medium'>{project.title}</div>
-
-                                        <div className='text-gray-600 sm:text-sm'>{project.description}</div>
+                                        <div className='text-gray-600 text-sm'>{project.description}</div>
 
                                         <div className='flex flex-col space-y-1 mt-3'>
                                             <div className='flex flex-row flex-1 px-2 py-1.5 bg-blue-50 text-slate-600 text-sm gap-x-1'>
@@ -262,7 +262,7 @@ function SendFeedback() {
                                         <textarea
                                             value={desc}
                                             onChange={(e) => setDesc(e.target.value)}
-                                            rows={5}
+                                            rows={4}
                                             className='border w-full border-gray-300 rounded-sm px-2 py-1.5 text-sm'
                                             placeholder='Share details of your own experience at this place'>
                                         </textarea>

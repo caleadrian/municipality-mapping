@@ -6,7 +6,7 @@ import Select from 'react-select'
 import ClickAwayListener from 'react-click-away-listener'
 import CustomCheckbox from "../components/CustomCheckbox"
 import * as turf from "@turf/turf"
-import { ExclamationCircleIcon } from '@heroicons/react/24/solid'
+import { ExclamationCircleIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/solid'
 import { MapPinIcon } from '@heroicons/react/24/solid'
 import { Duration } from "luxon"
 import { absoluteUrl } from "../utils/helper"
@@ -15,6 +15,7 @@ import { db } from '../firebase/config'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Rating } from 'react-simple-star-rating'
+import { isMobile } from 'react-device-detect';
 
 export default function Home({ data }) {
 
@@ -32,8 +33,11 @@ export default function Home({ data }) {
   const [mapIsLoaded, setMapIsLoaded] = useState(false)
   const map = useRef()
 
+  const [isHideControls, setIsHideControls] = useState(false)
+
   const [projectList, setProjectList] = useState([])
   const [isLoading, setIsLoading] = useState(false)
+
 
   useEffect(() => {
     getProjects()
@@ -185,7 +189,7 @@ export default function Home({ data }) {
           map.current.flyTo(
             {
               center: coords,
-              zoom: 15,
+              zoom: isMobile ? 13 : 15,
               duration: 1500,
               essential: true
             }
@@ -207,7 +211,6 @@ export default function Home({ data }) {
     setSelected(e)
 
     if (e.category === 'project') {
-      console.log(e)
       const _map = map.current.getMap()
       const coords = [e.coordinates.lng, e.coordinates.lat]
       const d = {
@@ -404,7 +407,7 @@ export default function Home({ data }) {
 
       console.log('distance', (json.routes[0].distance / 1000).toFixed(2), 'km')
     } else {
-      alert("HTTP-Error: " + response.status)
+      console.log("HTTP-Error: " + response.status)
     }
 
   }
@@ -421,95 +424,115 @@ export default function Home({ data }) {
 
       {/* floating controls */}
       <div
-        className="p-3 pb-5 absolute bg-opacity-90 w-[310px] z-10 m-5 rounded-md flex-1 bg-white">
-        <div className="relative flex-col gap-y-10">
-          <div>
-            <span className="text-xs text-gray-500">Search for location</span>
-            <Select
-              className="text-sm capitalize"
-              id="custom" instanceId="custom"
-              defaultValue={selected}
-              onChange={(e) => handleSelect(e)}
-              options={options}
-              noOptionsMessage={() => 'No result'}
-              placeholder='Select ...'>
-            </Select>
-          </div>
+        className="p-3 xs:py-1 pb-5 xs:pb-2 absolute bg-opacity-90 sm:w-[310px] z-10 sm:m-5 rounded-md flex-1 bg-white xs:bottom-0 xs:rounded-none xs:bg-opacity-60 xs:backdrop-blur-sm xs:w-full">
 
-          <div className="flex-col gap-y-3">
-            <span className="text-xs text-gray-500">Filter by category</span>
-            <div className="flex flex-wrap gap-x-5 gap-y-3">
-              {
-                checkboxFilters.map((item, key) => (
-                  <CustomCheckbox
-                    key={key}
-                    selectFilterCategory={handleSelectFilterCategory}
-                    label={item.label} category={item.category}>
-                  </CustomCheckbox>
-                ))
-              }
-
-            </div>
-          </div>
+        {/* toggle */}
+        <div
+          onClick={() => setIsHideControls(!isHideControls)}
+          className="absolute right-0 -top-8 bg-white p-1.5 rounded-sm sm:hidden">
+          {isHideControls ? (
+            <ChevronUpIcon className="h-5 w-5"></ChevronUpIcon>
+          ) : (
+            <ChevronDownIcon className="h-5 w-5"></ChevronDownIcon>
+          )}
         </div>
 
-        <div className="h-[1px] w-full bg-gray-200 my-4"></div>
+        {/* all content */}
+        <div className={`${isHideControls && 'hidden'}`}>
+          <div className="relative flex-col gap-y-10">
+            <div>
+              <span className="text-xs text-gray-500">Search for location</span>
+              <Select
+                className="text-sm xs:text-xs capitalize"
+                id="custom" instanceId="custom"
+                defaultValue={selected}
+                onChange={(e) => handleSelect(e)}
+                options={options}
+                noOptionsMessage={() => 'No result'}
+                placeholder='Select ...'>
+              </Select>
+            </div>
 
-        <div className="">
+            <div className="flex-col gap-y-3">
+              <span className="text-xs text-gray-500">Filter by category</span>
+              <div className="flex flex-wrap gap-x-5 gap-y-3 xs:gap-y-1.5">
+                {
+                  checkboxFilters.map((item, key) => (
+                    <CustomCheckbox
+                      key={key}
+                      selectFilterCategory={handleSelectFilterCategory}
+                      label={item.label} category={item.category}>
+                    </CustomCheckbox>
+                  ))
+                }
+
+              </div>
+            </div>
+          </div>
+
+          <div className="h-[1px] w-full bg-gray-200 my-4 xs:my-2"></div>
 
           {myCoordinates ? (
-            <div className="flex-col space-y-2">
+            <div className="flex-col flex space-y-1.5">
 
-              <div className="flex flex-grow gap-x-2 items-center">
-                <div className="text-xs
+              <div className="flex-col space-y-2 xs:space-y-1">
+                {/* your location */}
+                <div className="flex flex-grow gap-x-2 items-center">
+                  <div className="text-xs
                  text-gray-700 mb-1">
-                  <MapPinIcon className="h-5 w-5 text-blue-700"></MapPinIcon>
-                </div>
-                <div className="bg-blue-50 border border-blue-200 px-2 py-1 rounded-md w-full">
-                  <div className="text-xs font-bold">
-                    Your location
+                    <MapPinIcon className="h-5 w-5 text-blue-700"></MapPinIcon>
                   </div>
-                  <div className="text-xs text-gray-400 font-light">
-                    [{myCoordinates.longitude}, {myCoordinates.latitude}]
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-grow gap-x-2 items-center">
-                <div className="text-xs
-                 text-gray-700 mb-1">
-                  <MapPinIcon className="h-5 w-5 text-green-400"></MapPinIcon>
-                </div>
-                <div className="bg-blue-50 border border-blue-200 px-2 py-1 rounded-md w-full">
-                  <div className="text-xs font-bold">
-                    {geojson ? geojson.features[0].properties.name : ' - '}
-                  </div>
-                  <div className="text-xs text-gray-400 font-light">
-                    {geojson && JSON.stringify(getNearestToOrigin())}
-                  </div>
-                </div>
-              </div>
-              {(!myCoordinates || !geojson) && (
-                <div className="text-xs text-red-400 flex gap-x-1 items-center">
-                  <ExclamationCircleIcon className="h-5 w-5 text-red-600" />
-                  Select destination
-                </div>
-              )}
-
-              {directionResult && (
-                <div className="bg-slate-800 text-white rounded-sm px-3 py-2 flex-col">
-                  <div className="text-xs text-gray-300">🚘 Travel time and distance by
-                    <span className="font-bold ml-1">driving</span>
-                  </div>
-                  <div className="ml-5">
-                    <div className="text-sm font-bold">{durationToReadable(directionResult.routes[0].duration)}</div>
-                    <div className="text-xs font-light">
-                      {(directionResult.routes[0].distance / 1000).toFixed(2)} km
+                  <div className="bg-blue-50 border border-blue-200 px-2 py-1 rounded-md w-full xs:p-1.5">
+                    <div className="text-xs font-bold">
+                      Your location
+                    </div>
+                    <div className="text-xs text-gray-400 font-light xs:hidden">
+                      [{myCoordinates.longitude}, {myCoordinates.latitude}]
                     </div>
                   </div>
-
                 </div>
-              )}
+
+                {/* destination */}
+                <div className="flex flex-grow gap-x-2 items-center">
+                  <div className="text-xs
+                 text-gray-700 mb-1">
+                    <MapPinIcon className="h-5 w-5 text-green-400"></MapPinIcon>
+                  </div>
+                  <div className="bg-blue-50 border border-blue-200 px-2 py-1 rounded-md w-full xs:p-1.5">
+                    <div className="text-xs font-bold">
+                      {geojson ? geojson.features[0].properties.name : ' - '}
+                    </div>
+                    <div className="text-xs text-gray-400 font-light xs:hidden">
+                      {geojson && JSON.stringify(getNearestToOrigin())}
+                    </div>
+                  </div>
+                </div>
+                {(!myCoordinates || !geojson) && (
+                  <div className="text-xs text-red-400 flex gap-x-1 items-center">
+                    <ExclamationCircleIcon className="h-5 w-5 text-red-600" />
+                    Select destination
+                  </div>
+                )}
+              </div>
+
+
+              <div>
+                {directionResult && (
+                  // travel time section
+                  <div className="bg-slate-800 text-white rounded-sm px-3 py-2 flex-col">
+                    <div className="text-xs text-gray-300">🚘 Travel time and distance by
+                      <span className="font-bold ml-1">Driving</span>
+                    </div>
+                    <div className="ml-5 xs:flex xs:flex-row xs:items-center xs:gap-x-2">
+                      <div className="text-sm font-bold">{durationToReadable(directionResult.routes[0].duration)}</div>
+                      <div className="text-xs font-light">
+                        {(directionResult.routes[0].distance / 1000).toFixed(2)} km
+                      </div>
+                    </div>
+
+                  </div>
+                )}
+              </div>
 
               <button
                 className="bg-blue-500 text-white w-full font-medium rounded-sm text-xs py-2.5 hover:bg-opacity-80 disabled:bg-opacity-80 disabled:cursor-not-allowed"
@@ -572,16 +595,17 @@ export default function Home({ data }) {
               {
                 selectedCoords.features[0].properties?.category === 'project' ? (
                   <div className="flex flex-col p-0">
-                    <div className="relative min-h-[120px] bg-gray-200 opacity-80">
-                      {selectedCoords.features[0].properties.imgUrl && (
+                    {selectedCoords.features[0].properties.imgUrl && (
+                      <div className="relative min-h-[120px] bg-gray-200 opacity-80">
                         <Image src={selectedCoords.features[0].properties.imgUrl}
                           alt={selectedCoords.features[0].properties.name}
                           layout='fill' objectFit='cover' />
-                      )}
+                      </div>
+                    )}
 
-                    </div>
-                    <div className="px-5 py-3 flex flex-col">
-                      <div className="text-lg font-medium font-sans hover:opacity-80">
+
+                    <div className="px-5 xs:px-3.5 py-3 xs:py-2 xs:pb-0 flex flex-col">
+                      <div className="text-lg xs:text-base font-medium font-sans hover:opacity-80">
                         <Link href={'/' + selectedCoords.features[0].properties.id}>
                           {selectedCoords.features[0].properties.name}
                         </Link>
@@ -602,7 +626,7 @@ export default function Home({ data }) {
                         </div>
                       </div>
                     </div>
-                    <div className="px-5 pb-3 flex flex-row justify-end">
+                    <div className="px-5 xs:px-3.5 pb-3 xs:pb-2 flex flex-row justify-end">
                       <Link href={'/' + selectedCoords.features[0].properties.id + '#feedbackForm'}>
                         <button className="font-sans font-medium text-xs text-blue-600">
                           Send feedback
