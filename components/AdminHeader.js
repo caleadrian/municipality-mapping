@@ -1,14 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { GoogleAuthProvider, getAuth, signInWithPopup, signOut, getRedirectResult } from "firebase/auth";
+import { getAuth, signOut } from "firebase/auth";
 import { app } from '../firebase/config'
 import { checkifAdmin } from '../utils/helper'
 
-function AdminHeader() {
 
+export const UserAuthUid = () => {
+    const auth = getAuth(app)
+    return auth.currentUser.uid
+}
+
+function AdminHeader() {
     const router = useRouter()
-    const provider = new GoogleAuthProvider()
     const auth = getAuth(app)
     const [activePath, setActivePath] = useState(0)
     const onAuthStateChangedSubs = useRef()

@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
-import AdminHeader, { LayoutStyle, AdminContentLayout } from '../../../components/AdminHeader'
+import AdminHeader, { LayoutStyle, AdminContentLayout, UserAuthUid } from '../../../components/AdminHeader'
 import { useRouter } from 'next/router'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { Map, Source, Layer, Popup, NavigationControl, Marker } from 'react-map-gl'
@@ -9,9 +9,11 @@ import { ref, uploadBytesResumable, getDownloadURL, } from "firebase/storage"
 import { db, storage } from '../../../firebase/config'
 import Image from 'next/image'
 import { XMarkIcon } from '@heroicons/react/24/solid'
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+import { getAuth, signOut } from "firebase/auth";
+import { app } from '../../../firebase/config'
 
 const accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN
 
@@ -46,7 +48,7 @@ function Project() {
                     if (data) {
                         setMode('edit')
                         setTitle(data.title)
-                        setDesc(data.title)
+                        setDesc(data.description)
                         setLat(data.coordinates.lat)
                         setLng(data.coordinates.lng)
                         setStartDate(data.startDate ? data.startDate : new Date("yyyy-MM-dd"))
@@ -150,7 +152,7 @@ function Project() {
                             status: status,
                             createdAt: serverTimestamp(),
                             feedbacks: [],
-                            createdBy: 'uid'
+                            createdBy: UserAuthUid()
                         }
 
                         addDoc(collection(db, 'Projects'), docData)
@@ -187,7 +189,7 @@ function Project() {
                 status: status,
                 createdAt: serverTimestamp(),
                 feedbacks: [],
-                createdBy: 'uid'
+                createdBy: UserAuthUid()
             }
 
             addDoc(collection(db, 'Projects'), docData)
@@ -243,7 +245,7 @@ function Project() {
                             totalCost: totalCost,
                             status: status,
                             updatedAt: serverTimestamp(),
-                            updatedBy: 'uid'
+                            updatedBy: UserAuthUid()
                         }
 
                         setDoc(doc(db, 'Projects', pid), docData, { merge: true })
@@ -270,7 +272,7 @@ function Project() {
                 totalCost: totalCost,
                 status: status,
                 updatedAt: serverTimestamp(),
-                updatedBy: 'uid'
+                updatedBy: UserAuthUid()
             }
 
             if (!imgUrl) {

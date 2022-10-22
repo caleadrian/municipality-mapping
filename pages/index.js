@@ -167,7 +167,6 @@ export default function Home({ data }) {
 
         } else if (type === 'Point') {
           coords = d.features[0].geometry.coordinates.slice(0, -1)
-          console.log(d)
           _map.setLayoutProperty('point', 'visibility', 'visible')
           _map.setLayoutProperty('line', 'visibility', 'none')
           _map.setLayoutProperty('outline', 'visibility', 'none')
@@ -222,7 +221,7 @@ export default function Home({ data }) {
             properties: {
               name: e.title,
               category: e.category,
-              imgUrl: e.file.url,
+              imgUrl: e.file?.url,
               id: e.uid,
               desc: e.description,
               averageRating: e.feedbacks.reduce((acc, array) => acc + array.rating, 0) / e.feedbacks.length,
@@ -269,12 +268,15 @@ export default function Home({ data }) {
         setOptions(prev => [...prev, ...f])
       } else {
         // add projects
-        // console.log(projectList)
+        projectList.sort((a, b) => {
+          const textA = a.label.toUpperCase()
+          const textB = b.label.toUpperCase()
+          return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+        })
         setOptions(prev => [...prev, ...projectList])
       }
 
     } else {
-      console.log(category)
       setOptions(prev => prev.filter(item => item.category !== category))
     }
   }
@@ -570,7 +572,7 @@ export default function Home({ data }) {
               {
                 selectedCoords.features[0].properties?.category === 'project' ? (
                   <div className="flex flex-col p-0">
-                    <div className="relative min-h-[120px] bg-mesh opacity-80">
+                    <div className="relative min-h-[120px] bg-gray-200 opacity-80">
                       {selectedCoords.features[0].properties.imgUrl && (
                         <Image src={selectedCoords.features[0].properties.imgUrl}
                           alt={selectedCoords.features[0].properties.name}

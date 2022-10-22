@@ -200,7 +200,7 @@ function SendFeedback() {
                             <>
                                 <div>
                                     <div className='relative h-52 sm:h-64 bg-gray-200'>
-                                        {project.file.url && (
+                                        {project.file?.url && (
                                             <Image priority src={project.file.url} alt='test' layout='fill' objectFit='cover' />
                                         )}
 
@@ -220,7 +220,7 @@ function SendFeedback() {
 
                                         <div className='text-gray-600 sm:text-sm'>{project.description}</div>
 
-                                        <div className='flex flex-col space-y-1 mt-2'>
+                                        <div className='flex flex-col space-y-1 mt-3'>
                                             <div className='flex flex-row flex-1 px-2 py-1.5 bg-blue-50 text-slate-600 text-sm gap-x-1'>
                                                 <div className='justify-center flex flex-1 font-semibold'>Start Date</div>
                                                 <div className='justify-center flex flex-1'>{project.startDate}</div>
