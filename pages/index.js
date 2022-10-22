@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react"
 import 'mapbox-gl/dist/mapbox-gl.css'
-import { Map, Source, Layer, Popup, GeolocateControl } from 'react-map-gl'
+import { Map, Source, Layer, Popup, GeolocateControl, NavigationControl } from 'react-map-gl'
 import { kml } from "@tmcw/togeojson"
 import Select from 'react-select'
 import ClickAwayListener from 'react-click-away-listener'
@@ -424,16 +424,16 @@ export default function Home({ data }) {
 
       {/* floating controls */}
       <div
-        className="p-3 xs:py-1 pb-5 xs:pb-2 absolute bg-opacity-90 sm:w-[310px] z-10 sm:m-5 rounded-md flex-1 bg-white xs:bottom-0 xs:rounded-none xs:bg-opacity-60 xs:backdrop-blur-sm xs:w-full">
+        className="p-3 xs:py-1 pb-5 xs:pb-2 absolute bg-opacity-90 sm:w-[310px] z-50 sm:m-5 rounded-md flex-1 bg-white xs:bottom-0 xs:rounded-none xs:bg-opacity-60 xs:backdrop-blur-sm xs:w-full">
 
         {/* toggle */}
         <div
           onClick={() => setIsHideControls(!isHideControls)}
-          className="absolute right-0 -top-8 bg-white p-1.5 rounded-sm sm:hidden">
+          className="absolute right-1 -top-10 bg-white p-2 rounded-sm sm:hidden">
           {isHideControls ? (
-            <ChevronUpIcon className="h-5 w-5"></ChevronUpIcon>
+            <ChevronUpIcon className="h-6 w-6"></ChevronUpIcon>
           ) : (
-            <ChevronDownIcon className="h-5 w-5"></ChevronDownIcon>
+            <ChevronDownIcon className="h-6 w-6"></ChevronDownIcon>
           )}
         </div>
 
@@ -577,6 +577,7 @@ export default function Home({ data }) {
         style={{ height: '100vh', position: 'relative', zIndex: 0 }}
         mapStyle='mapbox://styles/mapbox/streets-v9'
       >
+        <NavigationControl position={isMobile ? 'top-left' : 'top-right'} />
 
         <Source id='my-data' type='geojson' data={geojson}>
           <Layer interactive={true} {...lineLayer} />
