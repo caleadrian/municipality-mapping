@@ -163,9 +163,13 @@ function Project() {
                                 setLng('')
                                 setFile('')
                                 setInputFile('')
+                                setStartDate(null)
+                                setEndDate(null)
+                                setTotalCost(0)
                                 setIsLoading(false)
                                 toast.update(toastId, { render: "Project saved successfully", type: "success", isLoading: false, autoClose: 3000, position: 'top-center' })
                             }).catch((err) => {
+                                setIsLoading(false)
                                 toast.update(toastId, { render: "Error while saving", type: "error", isLoading: false, autoClose: 3000, position: 'top-center' })
                                 console.log('Error while saving, Please report the issue!', err)
                             })
@@ -173,8 +177,6 @@ function Project() {
                 }
             );
         } else {
-
-
 
             const docData = {
                 title: title,
@@ -200,9 +202,13 @@ function Project() {
                     setLng('')
                     setFile('')
                     setInputFile('')
+                    setStartDate(null)
+                    setEndDate(null)
+                    setTotalCost(0)
                     setIsLoading(false)
                     toast.update(toastId, { render: "Project saved successfully", type: "success", isLoading: false, autoClose: 3000, position: 'top-center' })
                 }).catch((err) => {
+                    setIsLoading(false)
                     toast.update(toastId, { render: "Error while saving", type: "error", isLoading: false, autoClose: 3000, position: 'top-center' })
                     console.log('Error while saving, Please report the issue!', err)
                 })
@@ -253,6 +259,7 @@ function Project() {
                                 setIsLoading(false)
                                 toast.update(toastId, { render: "Project saved successfully", type: "success", isLoading: false, autoClose: 3000, position: 'top-center' })
                             }).catch((err) => {
+                                setIsLoading(false)
                                 toast.update(toastId, { render: "Error while saving", type: "error", isLoading: false, autoClose: 3000, position: 'top-center' })
                                 console.log('Error while saving, Please report the issue!', err)
                             })
@@ -284,6 +291,7 @@ function Project() {
                     setIsLoading(false)
                     toast.update(toastId, { render: "Project updated successfully", type: "success", isLoading: false, autoClose: 3000, position: 'top-center' })
                 }).catch((err) => {
+                    setIsLoading(false)
                     toast.update(toastId, { render: "Error while saving", type: "error", isLoading: false, autoClose: 3000, position: 'top-center' })
                     console.log('Error while saving, Please report the issue!', err)
                 })
@@ -362,7 +370,6 @@ function Project() {
                                             value={startDate && startDate}
                                             max={new Date(endDate, "yyyy-MM-dd")}
                                             onChange={(e) => setStartDate(e.target.value)}
-                                            required
                                             placeholder='Enter project title'
                                             className='border border-gray-300 rounded-sm px-2 py-1.5 text-sm'
                                             id='date' type='date' />
@@ -373,10 +380,8 @@ function Project() {
                                         </label>
                                         <input
                                             value={endDate && endDate}
-
                                             onChange={(e) => setEndDate(e.target.value)}
                                             min={new Date(startDate, "yyyy-MM-dd")}
-                                            required
                                             placeholder='Enter project title'
                                             className='border border-gray-300 rounded-sm px-2 py-1.5 text-sm'
                                             id='date' type='date' />

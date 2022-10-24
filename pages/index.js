@@ -118,9 +118,8 @@ export default function Home({ data }) {
       'line-join': 'round'
     },
     'paint': {
-      'line-color': 'red',
-      'line-width': 8,
-      'line-opacity': 0.9
+      'line-color': '#FBD065',
+      'line-width': 7
     }
   }
 
@@ -129,11 +128,10 @@ export default function Home({ data }) {
     'type': 'circle',
     'source': 'point',
     paint: {
-      'circle-radius': 10,
-      'circle-color': '#223b53',
+      'circle-radius': 8,
+      'circle-color': 'rgb(74,222,128)',
       'circle-stroke-color': 'white',
-      'circle-stroke-width': 1,
-      'circle-opacity': 0.5
+      'circle-stroke-width': 3
     }
   }
 
@@ -142,8 +140,8 @@ export default function Home({ data }) {
     'type': 'fill',
     'layout': {},
     'paint': {
-      'fill-color': 'red', // blue color fill
-      'fill-opacity': 0.5
+      'fill-color': '#9CC0F9', // blue color fill
+      'fill-outline-color': 'white'
     }
   }
 
@@ -210,7 +208,7 @@ export default function Home({ data }) {
   const handleSelect = (e) => {
     setSelected(e)
 
-    if (e.category === 'project') {
+    if (e?.category === 'project') {
       const _map = map.current.getMap()
       const coords = [e.coordinates.lng, e.coordinates.lat]
       const d = {
@@ -250,7 +248,7 @@ export default function Home({ data }) {
       )
       setShowPopup(true)
 
-    } else {
+    } else if (e?.category) {
       loadKML(e.value)
 
     }
@@ -383,6 +381,8 @@ export default function Home({ data }) {
           type: 'line',
           source: {
             type: 'geojson',
+            lineMetrics: true,
+
             data: {
               type: 'Feature',
               properties: {},
@@ -398,8 +398,19 @@ export default function Home({ data }) {
           },
           paint: {
             'line-color': '#3887be',
-            'line-width': 5,
-            'line-opacity': 0.75
+            'line-width': 7,
+            'line-opacity': 0.8,
+            'line-gradient': [
+              'interpolate',
+              ['linear'],
+              ['line-progress'],
+              0,
+              'blue',
+              0.5,
+              'royalblue',
+              0.8,
+              'cyan'
+            ]
           }
         });
       }
@@ -443,6 +454,7 @@ export default function Home({ data }) {
             <div>
               <span className="text-xs text-gray-500">Search for location</span>
               <Select
+                isClearable={true}
                 className="text-sm xs:text-xs capitalize"
                 id="custom" instanceId="custom"
                 defaultValue={selected}
@@ -650,6 +662,7 @@ export default function Home({ data }) {
         )}
 
         <GeolocateControl
+          trackUserLocation={true}
           onGeolocate={(e) => setMyCoordinates({ longitude: e.coords.longitude, latitude: e.coords.latitude })}
           showAccuracyCircle={false} ref={() => geolocateControlRef()} />
 

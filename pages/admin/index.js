@@ -4,11 +4,14 @@ import Link from 'next/link'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../../firebase/config'
 import { ArrowPathIcon } from '@heroicons/react/24/solid'
+import Pagination from '../../components/Pagination'
 
 function Admin() {
 
     const [projectList, setProjectList] = useState([])
+    const [totalProjectList, setTotalProjectList] = useState([])
     const [isLoading, setIsLoading] = useState(false)
+    const OFFSET = 8
 
     useEffect(() => {
         getProjects()
@@ -25,10 +28,16 @@ function Admin() {
                 uid: doc.id
             }
         })
+        setTotalProjectList(projects)
         //sort from latest to oldest
-        projects.reverse((a, b) => a.createdAt.getTime() - b.createdAt.getTime());
-        setProjectList(projects)
+        projects.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+        const p = projects.slice(0, OFFSET)
+        setProjectList(p)
         setIsLoading(false)
+    }
+
+    const handlePageChange = (results) => {
+        setProjectList(results)
     }
 
     return (
@@ -51,7 +60,7 @@ function Admin() {
                     {/* table */}
                     <div className="flex flex-col">
                         <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                            <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                            <div className="py-2 inline-block min-w-full px-5">
                                 <div className="overflow-hidden">
                                     <table className="min-w-full">
                                         <thead className="bg-gray-100 border-b">
@@ -139,6 +148,16 @@ function Admin() {
                                             ))}
                                         </tbody>
                                     </table>
+
+                                    <div className='mt-2'>
+                                        <Pagination
+                                            projects={totalProjectList}
+                                            offset={OFFSET}
+                                            showing={projectList.length}
+                                            total={totalProjectList.length}
+                                            onPageChange={handlePageChange}>
+                                        </Pagination>
+                                    </div>
                                 </div>
                             </div>
                         </div>

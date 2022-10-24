@@ -84,7 +84,7 @@ export const LayoutStyle = 'max-w-5xl mx-auto'
 export const AdminContentLayout = ({ children }) => {
 
     return (
-        <div className='pt-4 px-3 '>
+        <div className='pt-4 px-3 overflow-hidden'>
             {children}
         </div>
     )
