@@ -49,13 +49,22 @@ function Admin() {
                     Projects
                 </h1>
                 <div className='mt-5'>
-                    <div className='flex justify-end'>
+                    <div className='flex justify-end gap-x-2'>
                         <Link href={'/admin/project/new'}>
                             <button
-                                className='bg-[#0070f3] text-white font-medium text-sm py-2 px-5 rounded-md hover:bg-opacity-90'>
+                                className='bg-gradient-to-t from-blue-600 to-blue-500 hover:opacity-90 text-white font-medium text-sm py-2 px-5 rounded-md hover:bg-opacity-90'>
                                 Add Project
                             </button>
                         </Link>
+
+                        <button
+                            onClick={() => getProjects()}
+                            className='bg-gradient-to-t from-blue-600 to-blue-500 hover:opacity-90 text-white font-medium text-sm py-2 px-5 rounded-md hover:bg-opacity-90 flex flex-row items-center gap-x-2 justify-between'>
+                            <ArrowPathIcon
+                                className={`h-4 w-4 text-white ${isLoading && 'animate-spin'}`}>
+                            </ArrowPathIcon>
+                            Refresh
+                        </button>
                     </div>
                     {/* table */}
                     <div className="flex flex-col">

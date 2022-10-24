@@ -79,7 +79,7 @@ function Feedbacks() {
                 <div className='m-3 flex flex-row justify-end'>
                     <button
                         onClick={() => getFeedbacks()}
-                        className='bg-[#0070f3] text-white font-medium text-sm py-2 px-4 rounded-md hover:bg-opacity-90 flex flex-row items-center gap-x-2 justify-between'>
+                        className='bg-gradient-to-t from-blue-600 to-blue-500 hover:opacity-90 text-white font-medium text-sm py-2 px-5 rounded-md hover:bg-opacity-90 flex flex-row items-center gap-x-2 justify-between'>
                         <ArrowPathIcon
                             className={`h-4 w-4 text-white ${isLoading && 'animate-spin'}`}>
                         </ArrowPathIcon>

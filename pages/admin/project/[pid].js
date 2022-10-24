@@ -82,7 +82,6 @@ function Project() {
     }
 
     const handlePreview = () => {
-        notify()
         map.current.flyTo(
             {
                 center: [lng, lat],
@@ -477,21 +476,28 @@ function Project() {
                                     <span className="mt-1 text-xs text-gray-500" id="file_input_help">PNG, JPG or JPEG.</span>
                                 </div>
 
-                                <div className='flex flex-row justify-end gap-x-3'>
+                                <div className='flex flex-row justify-between gap-x-3'>
                                     <button
-                                        disabled={!lng || !lat}
                                         type='button'
-                                        onClick={() => handlePreview()}
-                                        className='text-gray-600 bg-gradient-to-t from-gray-200 to-white border px-5 py-2 rounded-md hover:opacity-90 text-sm shadow disabled:opacity-50 disabled:cursor-not-allowed'>
-                                        Preview
+                                        className='bg-gradient-to-t from-red-600 to-red-400 hover:opacity-90 text-white font-medium text-sm py-2 px-5 rounded-md hover:bg-opacity-90'>
+                                        Delete
                                     </button>
-                                    <button
-                                        type='submit'
-                                        className='bg-gradient-to-t from-blue-600 to-blue-500 text-white border px-6 py-2 rounded-md hover:opacity-90 text-sm shadow flex flex-row items-center justify-center min-w-[79px]'>
-                                        {isLoading ? (
-                                            <ArrowPathIcon className='h-5 w-5 text-white animate-spin'></ArrowPathIcon>
-                                        ) : 'Save'}
-                                    </button>
+                                    <div className='flex flex-row gap-x-3'>
+                                        <button
+                                            disabled={!lng || !lat}
+                                            type='button'
+                                            onClick={() => handlePreview()}
+                                            className='text-gray-600 bg-gradient-to-t from-gray-200 to-white border px-5 py-2 rounded-md hover:opacity-90 text-sm shadow disabled:opacity-50 disabled:cursor-not-allowed'>
+                                            Preview
+                                        </button>
+                                        <button
+                                            type='submit'
+                                            className='bg-gradient-to-t from-blue-600 to-blue-500 text-white border px-6 py-2 rounded-md hover:opacity-90 text-sm shadow flex flex-row items-center justify-center min-w-[79px]'>
+                                            {isLoading ? (
+                                                <ArrowPathIcon className='h-5 w-5 text-white animate-spin'></ArrowPathIcon>
+                                            ) : 'Save'}
+                                        </button>
+                                    </div>
                                 </div>
                             </form>
 
