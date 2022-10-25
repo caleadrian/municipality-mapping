@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { Map, Source, Layer, Popup, NavigationControl, Marker } from 'react-map-gl'
 import { MapPinIcon, ArrowPathIcon } from '@heroicons/react/24/solid'
-import { addDoc, doc, collection, serverTimestamp, getDoc, setDoc } from 'firebase/firestore'
+import { addDoc, doc, collection, serverTimestamp, getDoc, setDoc, deleteDoc } from 'firebase/firestore'
 import { ref, uploadBytesResumable, getDownloadURL, } from "firebase/storage"
 import { db, storage } from '../../../firebase/config'
 import Image from 'next/image'
@@ -70,12 +70,28 @@ function Project() {
 
 
     const Modal = () => {
-
         const [modalInput, setModalInput] = useState('')
+        const handleDelete = async () => {
 
-        const handleDelete = () => {
             if (modalInput.toLowerCase() === 'yes') {
+                const toastId = toast.loading("Deleting the project", {
+                    position: 'top-center'
+                })
 
+                setTimeout(async () => {
+                    await deleteDoc(doc(db, 'Projects', pid)).then(
+                        () => {
+                            setIsDelete(false)
+                            toast.update(toastId, { render: "Project deleted successfully", type: "success", isLoading: false, autoClose: 3000, position: 'top-center' })
+                            setTimeout(() => {
+                                router.push('/admin/')
+                            }, 1000);
+                        }
+                    ).catch(() => {
+                        setIsDelete(false)
+                        toast.update(toastId, { render: "Error while deleting", type: "error", isLoading: false, autoClose: 3000, position: 'top-center' })
+                    })
+                }, 2000);
             }
         }
 
@@ -165,6 +181,11 @@ function Project() {
 
     }
 
+    const dateIsValid = (date) => {
+        const d = new Date(date)
+        return d instanceof Date && !isNaN(d);
+    }
+
     const addProj = () => {
         const toastId = toast.loading("Saving your new project", {
             position: 'top-center'
@@ -197,8 +218,8 @@ function Project() {
                                 url: url,
                                 name: file?.name
                             },
-                            startDate: startDate,
-                            targetDate: endDate,
+                            startDate: dateIsValid(startDate) ? startDate : null,
+                            targetDate: dateIsValid(endDate) ? startDate : null,
                             totalCost: totalCost,
                             status: status,
                             createdAt: serverTimestamp(),
@@ -236,8 +257,8 @@ function Project() {
                     lng: lng,
                     lat: lat
                 },
-                startDate: startDate,
-                targetDate: endDate,
+                startDate: dateIsValid(startDate) ? startDate : null,
+                targetDate: dateIsValid(endDate) ? startDate : null,
                 totalCost: totalCost,
                 status: status,
                 createdAt: serverTimestamp(),
@@ -297,8 +318,8 @@ function Project() {
                                 url: url,
                                 name: file?.name
                             },
-                            startDate: startDate,
-                            targetDate: endDate,
+                            startDate: dateIsValid(startDate) ? startDate : null,
+                            targetDate: dateIsValid(endDate) ? startDate : null,
                             totalCost: totalCost,
                             status: status,
                             updatedAt: serverTimestamp(),
@@ -325,8 +346,8 @@ function Project() {
                     lng: lng,
                     lat: lat
                 },
-                startDate: startDate,
-                targetDate: endDate,
+                startDate: dateIsValid(startDate) ? startDate : null,
+                targetDate: dateIsValid(endDate) ? startDate : null,
                 totalCost: totalCost,
                 status: status,
                 updatedAt: serverTimestamp(),
@@ -411,7 +432,7 @@ function Project() {
                                         onChange={(e) => setDesc(e.target.value)}
                                         id='desc'
                                         placeholder='Enter project description'
-                                        rows={4}
+                                        rows={2}
                                         className='border border-gray-300 rounded-sm px-2 py-1.5 text-sm'>
                                     </textarea>
                                 </div>
