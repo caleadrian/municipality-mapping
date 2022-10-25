@@ -37,6 +37,7 @@ function Project() {
     const [isLoading, setIsLoading] = useState(false)
     const [imgUrl, setImgUrl] = useState()
     const [mode, setMode] = useState('add')
+    const [isDelete, setIsDelete] = useState(false)
 
     useEffect(() => {
         if (pid === 'new') {
@@ -44,7 +45,7 @@ function Project() {
 
         } else {
             getProject(pid).then(
-                (data) => {
+                async (data) => {
                     if (data) {
                         setMode('edit')
                         setTitle(data.title)
@@ -57,11 +58,62 @@ function Project() {
                         setStatus(data.status)
                         setImgUrl(data?.file?.url ? data.file.url : '')
                         setInputFile(data?.file?.name ? data.file.name : '')
+                    } else {
+                        router.push('/admin/')
+
                     }
                 }
             )
         }
-    }, [pid]);
+    }, [pid, router]);
+
+
+
+    const Modal = () => {
+
+        const [modalInput, setModalInput] = useState('')
+
+        const handleDelete = () => {
+            if (modalInput.toLowerCase() === 'yes') {
+
+            }
+        }
+
+        return (
+            <div
+                id='deleteModal'
+                onClick={(e) => { if (e.target.id === 'deleteModal') setIsDelete(false) }}
+                className='w-full h-full top-0 left-0 z-30 absolute bg-black bg-opacity-40 flex justify-center items-center text-sm transition-all'>
+                <div
+                    className='bg-white max-w-[30rem] w-full p-4 rounded-md z-40'>
+                    <div className='flex justify-between items-center mb-3'>
+                        <div className='font-semibold'>Are you sure?</div>
+                        <button
+                            onClick={() => setIsDelete(false)}
+                            className='cursor-pointer'>
+                            <XMarkIcon className='h-5 w-5'></XMarkIcon>
+                        </button>
+                    </div>
+                    <div className='mb-3'>
+                        This action <span className='font-semibold'>cannot</span> be undone. This will permanently delete the <span className='font-semibold'>{title}</span> project.
+                    </div>
+
+                    <div className='mb-2'>Please type <span className='font-semibold'>yes</span> to confirm.</div>
+                    <input
+                        value={modalInput}
+                        onChange={e => setModalInput(e.target.value)}
+                        type='text' className='text-center w-full border border-gray-300 rounded-md px-2 py-1.5 text-sm mb-2' />
+                    <button
+                        disabled={modalInput.toLowerCase() !== 'yes'}
+                        onClick={() => handleDelete()}
+                        type='button'
+                        className='bg-gradient-to-t from-red-600 to-red-400 hover:opacity-90 text-white font-medium text-sm py-2 px-5 rounded-md hover:bg-opacity-90 w-full disabled:opacity-75'>
+                        I confirm, delete this project
+                    </button>
+                </div>
+            </div>
+        )
+    }
 
     const getProject = async (id = 0) => {
         try {
@@ -318,7 +370,11 @@ function Project() {
 
 
     return (
-        <div className={LayoutStyle}>
+        <div className={`${LayoutStyle} ${isDelete && 'overflow-y-hidden'}`}>
+            {isDelete && (
+                <Modal></Modal>
+            )}
+
             <AdminHeader></AdminHeader>
             <AdminContentLayout>
 
@@ -476,12 +532,16 @@ function Project() {
                                     <span className="mt-1 text-xs text-gray-500" id="file_input_help">PNG, JPG or JPEG.</span>
                                 </div>
 
-                                <div className='flex flex-row justify-between gap-x-3'>
-                                    <button
-                                        type='button'
-                                        className='bg-gradient-to-t from-red-600 to-red-400 hover:opacity-90 text-white font-medium text-sm py-2 px-5 rounded-md hover:bg-opacity-90'>
-                                        Delete
-                                    </button>
+                                <div className={`flex flex-row gap-x-3 ${pid !== 'new' ? 'justify-between' : 'justify-end'}`}>
+                                    {pid !== 'new' && (
+                                        <button
+                                            onClick={() => setIsDelete(true)}
+                                            type='button'
+                                            className='bg-gradient-to-t from-red-600 to-red-400 hover:opacity-90 text-white font-medium text-sm py-2 px-5 rounded-md hover:bg-opacity-90'>
+                                            Delete
+                                        </button>
+                                    )}
+
                                     <div className='flex flex-row gap-x-3'>
                                         <button
                                             disabled={!lng || !lat}
