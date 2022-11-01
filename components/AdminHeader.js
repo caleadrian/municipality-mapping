@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { getAuth, signOut } from "firebase/auth";
 import { app } from '../firebase/config'
 import { checkifAdmin } from '../utils/helper'
+import Image from 'next/image';
 
 
 export const UserAuthUid = () => {
@@ -23,6 +24,8 @@ function AdminHeader() {
             setActivePath(0)
         } else if (router.pathname === '/admin/feedbacks') {
             setActivePath(1)
+        } else if (router.pathname === '/admin/accounts') {
+            setActivePath(2)
         } else {
             setActivePath(null)
         }
@@ -57,13 +60,19 @@ function AdminHeader() {
 
     return (
         <div
-            className='py-2 px-3 flex justify-between items-center'
+            className='py-2 px-3 flex justify-between items-center relative'
         >
-            <Link href={'/admin'}>
-                <div className='font-medium text-blue-600 cursor-pointer'>
-                    Admin Panel
+            <div className='flex  items-center gap-x-3'>
+                <div className='relative w-6 h-6 bg-white rounded-sm overflow-hidden'>
+                    <Image alt='test'
+                        src={`https://avatars.dicebear.com/api/identicon/:${auth.currentUser?.email.split('@')[0]}.svg`}
+                        layout='fill' objectFit='cover' />
+
                 </div>
-            </Link>
+                <div className='font-medium xs:hidden'>
+                    Hello, {auth.currentUser?.email.split('@')[0]}!
+                </div>
+            </div>
 
 
             <div className='flex gap-x-3'>
@@ -73,7 +82,10 @@ function AdminHeader() {
                 <Link href={'/admin/feedbacks'}>
                     <div className={`${activePath === 1 ? 'text-blue-700' : ''} cursor-pointer`}>Feedbacks</div>
                 </Link>
-                <button onClick={() => handleLogout()}>Logout</button>
+                <Link href={'/admin/accounts'}>
+                    <div className={`${activePath === 2 ? 'text-blue-700' : ''} cursor-pointer`}>Accounts</div>
+                </Link>
+                <button className='ml-5 xs:ml-2' onClick={() => handleLogout()}>Logout</button>
             </div>
         </div>
     )
