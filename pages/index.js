@@ -146,7 +146,7 @@ export default function Home({ data }) {
   }
 
 
-  const loadKML = (file) => {
+  const loadKML = (file, category) => {
     const _map = map.current.getMap()
 
     fetch(file)
@@ -183,7 +183,14 @@ export default function Home({ data }) {
 
         if (coords.length) {
           setGeojson(d)
-          setSelectedCoords({ ...d, center: coords })
+          setSelectedCoords(
+            {
+              ...d,
+              center: coords,
+              category: category
+            }
+          )
+
           map.current.flyTo(
             {
               center: coords,
@@ -249,7 +256,7 @@ export default function Home({ data }) {
       setShowPopup(true)
 
     } else if (e?.category) {
-      loadKML(e.value)
+      loadKML(e.value, e.category)
 
     }
   }
@@ -651,6 +658,13 @@ export default function Home({ data }) {
                 ) : (
                   <div className="px-5 py-2">
                     <div className="text-sm font-medium font-sans text-center capitalize">
+                      {selectedCoords.category === 'Brgy' && (
+                        <div className="relative w-full">
+                          <Image className="scale-150" src={`/logos/${selectedCoords.features[0].properties.name}.png`}
+                            alt={selectedCoords.features[0].properties.name}
+                            height={130} width={130} objectFit='cover' />
+                        </div>
+                      )}
                       {selectedCoords.features[0].properties.name}
                     </div>
                   </div>
