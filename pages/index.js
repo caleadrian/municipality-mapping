@@ -38,6 +38,9 @@ export default function Home({ data }) {
   const [projectList, setProjectList] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
+  const [projectStatus, setProjectStatus] = useState(['finished', 'cancelled', 'ongoing'])
+  const [selectedCategory, setSelectedCategory] = useState('')
+
 
   useEffect(() => {
     getProjects()
@@ -72,6 +75,13 @@ export default function Home({ data }) {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const isabelaBounds = [
+    { lat: 122.459171, lng: 16.895657 },
+    { lat: 122.197871, lng: 16.712741 },
+    { lat: 121.928405, lng: 16.877686 },
+    { lat: 122.219918, lng: 17.083860 }
+  ]
 
   const checkboxFilters = [
     {
@@ -227,6 +237,8 @@ export default function Home({ data }) {
               type: 'Point'
             },
             properties: {
+              status: e.status,
+              compDate: e.targetDate,
               name: e.title,
               category: e.category,
               imgUrl: e.file?.url,
@@ -269,23 +281,32 @@ export default function Home({ data }) {
     }
   }, [])
 
-  const handleSelectFilterCategory = (isCheck, category) => {
+  const handleSelectFilterCategory = (isCheck, category, isPS = '') => {
     if (isCheck) {
+      setSelectedCategory(prev => [...prev, category])
       if (category !== 'project') {
         const f = _options.filter(item => item.category === category)
         setOptions(prev => [...prev, ...f])
       } else {
         // add projects
+        const nProjList = []
         projectList.sort((a, b) => {
           const textA = a.label.toUpperCase()
           const textB = b.label.toUpperCase()
           return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
         })
-        setOptions(prev => [...prev, ...projectList])
+
+        nProjList = projectList
+        if (projectStatus.length) {
+          nProjList = projectList.filter(item => projectStatus.includes(item.status))
+        }
+
+        setOptions(prev => [...prev, ...nProjList])
       }
 
     } else {
       setOptions(prev => prev.filter(item => item.category !== category))
+      setSelectedCategory(prev => prev.filter(item => item !== category))
     }
   }
 
@@ -437,6 +458,18 @@ export default function Home({ data }) {
     return `${obj.hours} ${obj.hours > 1 ? 'hours' : 'hour'}, ${obj.minutes} ${obj.minutes > 1 ? 'minutes' : 'minute'}`
   }
 
+  const handleProjectStatusCheck = (e, status) => {
+    if (e.target.checked) {
+      setProjectStatus(prev => [...prev, status])
+      const nProjList = projectList.filter(item => item.status == status)
+      setOptions(prev => [...prev, ...nProjList])
+    } else {
+      setProjectStatus(prev => prev.filter(item => item !== status))
+      setOptions(prev => prev.filter(item => item.status !== status))
+    }
+
+  }
+
   return (
     <div className={`max-w-7xl bg-mesh mx-auto h-screen relative ${selectedCoords && selectedCoords.features[0].properties?.category === 'project' ? 'project' : ''}`}>
 
@@ -476,7 +509,7 @@ export default function Home({ data }) {
               <span className="text-xs text-gray-500">Filter by category</span>
               <div className="flex flex-wrap gap-x-5 gap-y-3 xs:gap-y-1.5">
                 {
-                  checkboxFilters.map((item, key) => (
+                  checkboxFilters.filter(item => item.category !== 'project').map((item, key) => (
                     <CustomCheckbox
                       key={key}
                       selectFilterCategory={handleSelectFilterCategory}
@@ -484,6 +517,68 @@ export default function Home({ data }) {
                     </CustomCheckbox>
                   ))
                 }
+
+                <div className="h-[1px] bg-red-100 w-full mx-10"></div>
+
+                <div className="flex-col space-y-2">
+                  <CustomCheckbox
+                    selectFilterCategory={handleSelectFilterCategory}
+                    label='Projects' category='project'>
+                  </CustomCheckbox>
+
+                  <div className="flex gap-x-3">
+                    <div className="form-check flex items-center">
+                      <input
+                        defaultChecked={true}
+                        onChange={e => handleProjectStatusCheck(e, 'finished')}
+                        disabled={!selectedCategory.includes('project')}
+                        className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain mr-1.5 cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-200 disabled:checked:border-gray-400"
+                        type="checkbox"
+                        id='finished' />
+                      <label
+                        className={`form-check-label inline-block  text-xs cursor-pointer 
+                        ${(!selectedCategory.includes('project')) ? 'text-gray-400' : 'text-gray-800'}`}
+                        htmlFor='finished'>
+                        Finished
+                      </label>
+                    </div>
+
+                    <div className="form-check flex items-center">
+                      <input
+                        defaultChecked={true}
+
+                        onChange={e => handleProjectStatusCheck(e, 'cancelled')}
+                        disabled={!selectedCategory.includes('project')}
+                        className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain mr-1.5 cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-200 disabled:checked:border-gray-400"
+                        type="checkbox"
+                        id='cancelled' />
+                      <label
+                        className={`form-check-label inline-block  text-xs cursor-pointer 
+                         ${(!selectedCategory.includes('project')) ? 'text-gray-400' : 'text-gray-800'}`}
+                        htmlFor='cancelled'>
+                        Cancelled
+                      </label>
+                    </div>
+
+                    <div className="form-check flex items-center">
+                      <input
+                        defaultChecked={true}
+
+                        onChange={e => handleProjectStatusCheck(e, 'ongoing')}
+                        disabled={!selectedCategory.includes('project')}
+                        className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain mr-1.5 cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-200 disabled:checked:border-gray-400"
+                        type="checkbox"
+                        id='ongoing' />
+                      <label
+                        className={`form-check-label inline-block  text-xs cursor-pointer 
+                        ${(!selectedCategory.includes('project')) ? 'text-gray-400' : 'text-gray-800'}`}
+                        htmlFor='ongoing'>
+                        Ongoing
+                      </label>
+                    </div>
+
+                  </div>
+                </div>
 
               </div>
             </div>
@@ -631,7 +726,12 @@ export default function Home({ data }) {
                         </Link>
                       </div>
                       <div className="text-gray-500">
-                        {selectedCoords.features[0].properties.desc}
+
+                        {selectedCoords.features[0].properties.status === 'finished' && (
+                          <div>Completion Date: {selectedCoords.features[0].properties.compDate}</div>
+                        )}
+
+                        {selectedCoords.features[0].properties.desc} {`(${selectedCoords.features[0].properties.status.toUpperCase()})`}
                       </div>
                       <div>
                         <div className='text-xs text-gray-400 flex flex-row items-center gap-x-1'>

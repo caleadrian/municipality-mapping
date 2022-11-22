@@ -17,6 +17,8 @@ import { app } from '../../../firebase/config'
 
 const accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN
 
+const BRGY_LIST = ["Alibadabad", "Balagan", "Binatug", "Bitabian", "Buyasan", "Cadsalan", "Casala", "Cataguing", "Daragutan East", "Daragutan west", "Del Pilar", "Dibuluan", "Dicamay", "Dipusu", "Disulap", "Disusuan", "Gangalan", "Ibujan", "Libertad", "Macayucayu", "Mallabo", "Marranao", "Minanga", "Old San Mariano", "Pallutan", "Panninan", "San Jose", "San Pablo", "San Pedro", "Sta. Filomena", "Tappa", "Ueg", "Zamora", "Zone 1", "Zone 2", "Zone 3"]
+
 function Project() {
     const map = useRef()
     const router = useRouter()
@@ -31,6 +33,7 @@ function Project() {
     const [file, setFile] = useState('')
     const [inputFile, setInputFile] = useState('')
     const [status, setStatus] = useState('finished')
+    const [brgy, setBrgy] = useState('none')
     const [lng, setLng] = useState('')
     const [lat, setLat] = useState('')
     const [progresspercent, setProgresspercent] = useState()
@@ -56,6 +59,7 @@ function Project() {
                         setEndDate(data.targetDate ? data.targetDate : new Date("yyyy-MM-dd"))
                         setTotalCost(data.totalCost)
                         setStatus(data.status)
+                        setBrgy(data.brgy)
                         setImgUrl(data?.file?.url ? data.file.url : '')
                         setInputFile(data?.file?.name ? data.file.name : '')
                     } else {
@@ -222,6 +226,7 @@ function Project() {
                             targetDate: dateIsValid(endDate) ? startDate : null,
                             totalCost: totalCost,
                             status: status,
+                            brgy: brgy,
                             createdAt: serverTimestamp(),
                             feedbacks: [],
                             createdBy: UserAuthUid()
@@ -261,6 +266,7 @@ function Project() {
                 targetDate: dateIsValid(endDate) ? startDate : null,
                 totalCost: totalCost,
                 status: status,
+                brgy: brgy,
                 createdAt: serverTimestamp(),
                 feedbacks: [],
                 createdBy: UserAuthUid()
@@ -322,6 +328,7 @@ function Project() {
                             targetDate: dateIsValid(endDate) ? startDate : null,
                             totalCost: totalCost,
                             status: status,
+                            brgy: brgy,
                             updatedAt: serverTimestamp(),
                             updatedBy: UserAuthUid()
                         }
@@ -350,6 +357,7 @@ function Project() {
                 targetDate: dateIsValid(endDate) ? startDate : null,
                 totalCost: totalCost,
                 status: status,
+                brgy: brgy,
                 updatedAt: serverTimestamp(),
                 updatedBy: UserAuthUid()
             }
@@ -488,6 +496,25 @@ function Project() {
                                         <option value="cancelled">Cancelled</option>
                                         <option value="ongoing">Ongoing</option>
                                         <option value="finished">Finished</option>
+                                    </select>
+                                </div>
+
+                                <div className='flex flex-col'>
+                                    <label className='text-sm font-bold text-gray-600 mb-0.5' htmlFor='status'>
+                                        Barangay
+                                    </label>
+                                    <select
+                                        onChange={(e) => setBrgy(e.target.value)}
+                                        value={brgy}
+                                        defaultValue={brgy}
+                                        className='border border-gray-300 rounded-sm px-2 py-1.5 text-sm' id="brgy">
+                                        <option value="none" disabled>Select a Barangay</option>
+                                        {BRGY_LIST.map(item => (
+                                            <option key={item} value={item.toLowerCase()}>{item}</option>
+                                        ))}
+                                        {/* <option value="cancelled">Cancelled</option>
+                                        <option value="ongoing">Ongoing</option>
+                                        <option value="finished">Finished</option> */}
                                     </select>
                                 </div>
 
