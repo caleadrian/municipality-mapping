@@ -55,8 +55,8 @@ function Project() {
                         setDesc(data.description)
                         setLat(data.coordinates.lat)
                         setLng(data.coordinates.lng)
-                        setStartDate(data.startDate ? data.startDate : new Date("yyyy-MM-dd"))
-                        setEndDate(data.targetDate ? data.targetDate : new Date("yyyy-MM-dd"))
+                        setStartDate(data.startDate ? data.startDate : new Date("yyyy/MM/dd"))
+                        setEndDate(data.targetDate ? data.targetDate : new Date("yyyy/MM/dd"))
                         setTotalCost(data.totalCost)
                         setStatus(data.status)
                         setBrgy(data.brgy)
@@ -325,7 +325,7 @@ function Project() {
                                 name: file?.name
                             },
                             startDate: dateIsValid(startDate) ? startDate : null,
-                            targetDate: dateIsValid(endDate) ? startDate : null,
+                            targetDate: dateIsValid(endDate) ? endDate : null,
                             totalCost: totalCost,
                             status: status,
                             brgy: brgy,
@@ -354,7 +354,7 @@ function Project() {
                     lat: lat
                 },
                 startDate: dateIsValid(startDate) ? startDate : null,
-                targetDate: dateIsValid(endDate) ? startDate : null,
+                targetDate: dateIsValid(endDate) ? endDate : null,
                 totalCost: totalCost,
                 status: status,
                 brgy: brgy,

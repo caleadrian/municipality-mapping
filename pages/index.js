@@ -578,6 +578,14 @@ export default function Home({ data }) {
                     </div>
 
                   </div>
+
+                  <Link href={'/projects'}>
+                    <button
+                      className="pt-2 text-blue-600 font-medium hover:opacity-70 ml-1 text-xs cursor-pointer">
+                      View project details
+                    </button>
+                  </Link>
+
                 </div>
 
               </div>
