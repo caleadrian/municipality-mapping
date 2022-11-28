@@ -43,6 +43,7 @@ function Projects() {
         })
         setTotalProjectList(projects.map(item => {
             return {
+                ...item,
                 Title: item.title,
                 Description: item.description,
                 'Total Cost': item.totalCost,
@@ -103,7 +104,7 @@ function Projects() {
         //let buffer = XLSX.write(workbook, { bookType: "xlsx", type: "buffer" });
         //XLSX.write(workbook, { bookType: "xlsx", type: "binary" });
         XLSX.writeFile(workbook, filename + ".xlsx");
-        console.log('downloaded')
+        // console.log('downloaded')
     };
 
 

@@ -39,7 +39,7 @@ const Pagination = ({ projects, total, offset, showing, onPageChange }) => {
 
             const foo = projects
             const bar = foo.slice(showingCount - (offset * 2), showingCount - offset)
-            console.log('prev', showingCount - (offset * 2), showingCount - offset)
+            // console.log('prev', showingCount - (offset * 2), showingCount - offset)
             setShowingCount(prev => prev - offset)
             onPageChange(bar)
         }
