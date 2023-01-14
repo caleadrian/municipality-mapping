@@ -79,25 +79,6 @@ function Charts() {
             }
         })
 
-        const countByStatus = projects.reduce((counts, item) => {
-            counts[item.status] = (counts[item.status] || 0) + 1;
-            return counts;
-        }, {});
-
-        const d = []
-        d.push(countByStatus.finished)
-        d.push(countByStatus.ongoing)
-        d.push(countByStatus.cancelled)
-        setChartData({
-            ...chartData,
-            datasets: [
-                {
-                    ...chartData.datasets[0],
-                    data: d
-                }
-            ]
-        });
-        setIsLoading(false);
 
         const countByCompletedDate = projects.map(item => {
             return {
@@ -120,7 +101,24 @@ function Charts() {
             ]
         });
 
-        console.log(countByCompletedDate);
+        const countByStatus = projects.reduce((counts, item) => {
+            counts[item.status] = (counts[item.status] || 0) + 1;
+            return counts;
+        }, {});
+
+        setChartData({
+            ...chartData,
+            datasets: [
+                {
+                    ...chartData.datasets[0],
+                    data: Object.values(countByStatus)
+                }
+            ]
+        });
+
+
+        setIsLoading(false);
+
     }
 
     useNoInitialEffect(() => {
