@@ -20,7 +20,7 @@ function Charts() {
         datasets: [
             {
                 label: '# of Projects',
-                data: [1, 2, 3],
+                data: [],
                 backgroundColor: [
                     '#adf7b6',
                     '#ffee93',
@@ -121,8 +121,9 @@ function Charts() {
 
     }
 
-    useNoInitialEffect(() => {
+    useEffect(() => {
         getProjects()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {
