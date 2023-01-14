@@ -136,7 +136,7 @@ function Accounts() {
                             disabled={isLoading}
                             type='submit'
                             className='bg-gradient-to-t from-blue-600 to-blue-500 hover:opacity-90 text-white font-medium text-sm py-2 px-5 rounded-md hover:bg-opacity-90 disabled:opacity-80'>
-                            I confirm, add this email
+                            Add Email
                         </button>
                     </form>
                 </div>

@@ -4,7 +4,7 @@ import { GoogleAuthProvider, getAuth, signInWithRedirect, signOut, getRedirectRe
 import { db, app } from '../../firebase/config'
 import { collection, getDocs } from 'firebase/firestore'
 import Pagination from '../../components/Pagination'
-import { ArrowDownOnSquareIcon, ArrowPathIcon } from '@heroicons/react/24/solid'
+import { ArrowDownOnSquareIcon, ArrowPathIcon, ChartPieIcon } from '@heroicons/react/24/solid'
 import * as XLSX from 'xlsx';
 
 function Projects() {
@@ -134,6 +134,16 @@ function Projects() {
                     </h1>
                     <div className='mt-5'>
                         <div className='flex justify-end gap-x-2'>
+
+                            <Link href='/projects/charts'>
+                                <button
+                                    className='bg-gradient-to-t from-orange-500 to-orange-400 hover:opacity-90 text-white font-medium text-sm py-2 px-5 rounded-md hover:bg-opacity-90 flex flex-row items-center gap-x-2 justify-between'>
+                                    <ChartPieIcon
+                                        className={`h-4 w-4 text-white`}>
+                                    </ChartPieIcon>
+                                    Chart
+                                </button>
+                            </Link>
 
                             <button
                                 onClick={totalProjectList.length ? () => handleDownloadExcel(totalProjectList, 'Projects') : null}

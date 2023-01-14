@@ -245,7 +245,8 @@ export default function Home({ data }) {
               id: e.uid,
               desc: e.description,
               averageRating: e.feedbacks.reduce((acc, array) => acc + array.rating, 0) / e.feedbacks.length,
-              totalFeedbacks: e.feedbacks.length
+              totalFeedbacks: e.feedbacks.length,
+              percentage: e.percentage
             },
             type: 'Feature'
           }
@@ -739,7 +740,8 @@ export default function Home({ data }) {
                           <div>Completion Date: {selectedCoords.features[0].properties.compDate}</div>
                         )}
 
-                        {selectedCoords.features[0].properties.desc} {`(${selectedCoords.features[0].properties.status.toUpperCase()})`}
+                        {selectedCoords.features[0].properties.desc} {`(${selectedCoords.features[0].properties.status.toUpperCase()} 
+                        ${selectedCoords.features[0].properties.status === 'ongoing' ? '- ' + selectedCoords.features[0].properties.percentage + '%' : ''})`}
                       </div>
                       <div>
                         <div className='text-xs text-gray-400 flex flex-row items-center gap-x-1'>

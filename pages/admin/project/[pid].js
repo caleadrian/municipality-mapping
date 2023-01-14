@@ -33,6 +33,7 @@ function Project() {
     const [file, setFile] = useState('')
     const [inputFile, setInputFile] = useState('')
     const [status, setStatus] = useState('finished')
+    const [percentage, setPercentage] = useState(null)
     const [brgy, setBrgy] = useState('none')
     const [lng, setLng] = useState('')
     const [lat, setLat] = useState('')
@@ -59,6 +60,7 @@ function Project() {
                         setEndDate(data.targetDate ? data.targetDate : new Date("yyyy/MM/dd"))
                         setTotalCost(data.totalCost)
                         setStatus(data.status)
+                        setPercentage(data.percentage)
                         setBrgy(data.brgy)
                         setImgUrl(data?.file?.url ? data.file.url : '')
                         setInputFile(data?.file?.name ? data.file.name : '')
@@ -226,6 +228,7 @@ function Project() {
                             targetDate: dateIsValid(endDate) ? startDate : null,
                             totalCost: totalCost,
                             status: status,
+                            percentage: percentage,
                             brgy: brgy,
                             createdAt: serverTimestamp(),
                             feedbacks: [],
@@ -266,6 +269,7 @@ function Project() {
                 targetDate: dateIsValid(endDate) ? startDate : null,
                 totalCost: totalCost,
                 status: status,
+                percentage: percentage,
                 brgy: brgy,
                 createdAt: serverTimestamp(),
                 feedbacks: [],
@@ -328,6 +332,7 @@ function Project() {
                             targetDate: dateIsValid(endDate) ? endDate : null,
                             totalCost: totalCost,
                             status: status,
+                            percentage: percentage,
                             brgy: brgy,
                             updatedAt: serverTimestamp(),
                             updatedBy: UserAuthUid()
@@ -357,6 +362,7 @@ function Project() {
                 targetDate: dateIsValid(endDate) ? endDate : null,
                 totalCost: totalCost,
                 status: status,
+                percentage: percentage ? percentage : 0,
                 brgy: brgy,
                 updatedAt: serverTimestamp(),
                 updatedBy: UserAuthUid()
@@ -395,6 +401,14 @@ function Project() {
         setImgUrl('')
         setFile('')
         setInputFile('')
+    }
+
+    const handleSelectStatus = (e) => {
+        e.preventDefault()
+        if (e.target.value === 'finished') {
+            setPercentage(100)
+        }
+        setStatus(e.target.value)
     }
 
 
@@ -473,31 +487,52 @@ function Project() {
                                 </div>
 
                                 <div className='flex flex-col'>
-                                    <label className='text-sm font-bold text-gray-600 mb-0.5' htmlFor='title'>
+                                    <label className='text-sm font-bold text-gray-600 mb-0.5' htmlFor='totalcost'>
                                         Total Cost
                                     </label>
                                     <input
                                         required
                                         value={totalCost}
                                         onChange={(e) => setTotalCost(e.target.value)}
-                                        placeholder='Enter project title'
+                                        placeholder='Enter total cost'
                                         className='border border-gray-300 rounded-sm px-2 py-1.5 text-sm'
-                                        id='title' type='number' />
+                                        id='totalcost' type='number' />
                                 </div>
 
-                                <div className='flex flex-col'>
-                                    <label className='text-sm font-bold text-gray-600 mb-0.5' htmlFor='status'>
-                                        Status
-                                    </label>
-                                    <select
-                                        onChange={(e) => setStatus(e.target.value)}
-                                        value={status}
-                                        className='border border-gray-300 rounded-sm px-2 py-1.5 text-sm' id="status" placeholder='Select project status'>
-                                        <option value="cancelled">Cancelled</option>
-                                        <option value="ongoing">Ongoing</option>
-                                        <option value="finished">Finished</option>
-                                    </select>
+                                <div className='flex flex-row justify-between gap-x-3'>
+                                    <div className='flex flex-col flex-1'>
+                                        <label className='text-sm font-bold text-gray-600 mb-0.5' htmlFor='status'>
+                                            Status
+                                        </label>
+                                        <select
+                                            onChange={(e) => handleSelectStatus(e)}
+                                            value={status}
+                                            className='border border-gray-300 rounded-sm px-2 py-1.5 text-sm' id="status" placeholder='Select project status'>
+                                            <option value="cancelled">Cancelled</option>
+                                            <option value="ongoing">Ongoing</option>
+                                            <option value="finished">Finished</option>
+                                        </select>
+                                    </div>
+
+                                    <div className='flex flex-col flex-1'>
+                                        <label className='text-sm font-bold text-gray-600 mb-0.5' htmlFor='percentage'>
+                                            Percentage
+                                        </label>
+                                        <input
+                                            disabled={status === 'finished'}
+                                            pattern={'0-9'}
+                                            min={0}
+                                            max={100}
+                                            required
+                                            value={percentage}
+                                            onChange={(e) => setPercentage(e.target.value)}
+                                            placeholder='Enter percentage'
+                                            className='border border-gray-300 rounded-sm px-2 py-1.5 text-sm disabled:cursor-not-allowed disabled:bg-gray-200'
+                                            id='percentage' type='number' />
+                                    </div>
                                 </div>
+
+
 
                                 <div className='flex flex-col'>
                                     <label className='text-sm font-bold text-gray-600 mb-0.5' htmlFor='status'>
