@@ -694,7 +694,7 @@ export default function Home({ data }) {
         initialViewState={{
           longitude: 121.81065054090598,
           latitude: 16.89841970415851,
-          zoom: 8
+          zoom: 9
         }}
         id='map'
         style={{ height: '100vh', position: 'relative', zIndex: 0 }}
